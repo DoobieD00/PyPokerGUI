@@ -1,8 +1,6 @@
 import random
 from pypokerengine.players import BasePokerPlayer
 
-# hi - rebecca 
-
 # Notes
 # All cards follow this format: Suit + Rank : 4 of Hearts = 4H, 10 of Spades = ST [2,3,4,5,6,7,8,9,T,J,Q,K,A] [S,C,D,H]
 
@@ -96,6 +94,5 @@ class MyBot(BasePokerPlayer):  # Do not forget to make parent class as "BasePoke
         action_info = valid_actions[2]
         amount = action_info['amount']['max']
         return action_info['action'], amount
-
 
 
