@@ -3,10 +3,31 @@
 {% block event_title %}New Action declared{% end %}
 
 {% block event_content %}
+<style>
+  #update_game {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  #update_game h4 {
+    font-size: 1em;
+    margin: 0;
+    line-height: 1em; /* Adjust line spacing */
+    word-wrap: break-word;
+    white-space: normal;
+  }
+
+  #update_game h4 span {
+    display: block; /* Makes each span render on a new line */
+    margin-bottom: 0.3em; /* Optional spacing between lines */
+  }
+</style>
+
 <div id="update_game">
   <h4> 
     <span>[ {{ [player['name'] for player in round_state['seats'] if player['uuid']==action['player_uuid']][0] }} ]</span>
-    <span>{{ " declared " }}</span>
+    <span>declared</span>
     <span>
       [ {{ action['action'] }} 
       {% if action['action'] != "fold" %}

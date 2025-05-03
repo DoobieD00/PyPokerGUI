@@ -112,8 +112,20 @@
   border-left: 4px solidrgb(0, 0, 0);
 }
 
-#event_content {
+
+#event_container {
+  width: 100%;            /* Stretch to fill the parent/container width */
+  min-width: 400px;       /* Prevent it from shrinking too much */
+  max-width: 1000px;      /* Optional: limit how wide it gets */
+  margin: 0 auto;         /* Center if smaller than full width */
+  padding: 2rem;
+  box-sizing: border-box;
+  font-size: 1.2em;
+}
+#update_game{
   padding: 10px;
+  font-weight: bold;
+  font-size: 3em;
 }
 
 #round-state-table {

@@ -1,0 +1,14 @@
+ai_players:
+  - name: MasBot
+    path: submission/TeamMasBot.py
+  - name: Fish2
+    path: sample_player/fish_player_setup.py
+  - name: Fish4
+    path: sample_player/fish_player_setup.py
+  - name: pokermon
+    path: submission/pokermon.py
+ante: 0
+blind_structure: null
+initial_stack: 100
+max_round: 10
+small_blind: 5

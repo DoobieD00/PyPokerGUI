@@ -1,13 +1,17 @@
 import random
 from pypokerengine.players import BasePokerPlayer
+from pypokerengine.utils.card_utils import gen_cards, estimate_hole_card_win_rate
+
+NB_SIMULATION = 1000
+
 
 # Notes
 # All cards follow this format: Suit + Rank : 4 of Hearts = 4H, 10 of Spades = ST [2,3,4,5,6,7,8,9,T,J,Q,K,A] [S,C,D,H]
 
 def setup_ai():
-    return MyBot()
+    return TeamMasBot()
 
-class MyBot(BasePokerPlayer):  # Do not forget to make parent class as "BasePokerPlayer"
+class TeamMasBot(BasePokerPlayer):  # Do not forget to make parent class as "BasePokerPlayer"
 
     #  we define the logic to make an action through this method. (so this method would be the core of your AI)
     def declare_action(self, valid_actions, hole_card, round_state):
@@ -35,17 +39,33 @@ class MyBot(BasePokerPlayer):  # Do not forget to make parent class as "BasePoke
 
         # --------------------------------------------------------------------------------------------------------#
         
-        # Sample code: feel free to rewrite
-        action = random.choice(valid_actions)["action"]
-        if action == "raise":
-            action_info = valid_actions[2]
-            amount = random.randint(action_info["amount"]["min"], action_info["amount"]["max"])
-            if amount == -1: action = "call"
-        if action == "call":
-            return self.do_call(valid_actions)
-        if action == "fold":
-            return self.do_fold(valid_actions)
-        return self.do_raise(valid_actions, amount)   # action returned here is sent to the poker engine
+        # bolder version of honest player
+        # calculate odd
+        community_card = round_state['community_card']
+        win_rate = estimate_hole_card_win_rate(
+                nb_simulation=NB_SIMULATION,
+                nb_player=self.nb_player,
+                hole_card=gen_cards(hole_card),
+                community_card=gen_cards(community_card)
+                )
+        if win_rate >= 1.0 / (self.nb_player + (min(max(20, pot["main"]["amount"]),100)/self.nb_player)):
+            # check if we want to raise
+            raise_by = int((win_rate) * pot["main"]["amount"])
+            if round_state['street']=="preflop":
+                raise_by = raise_by/2
+            if raise_by > min_raise and raise_by < max_raise:
+                return "raise", raise_by
+            elif raise_by > max_raise and max_raise > 0:
+                return "raise", max_raise
+            # otherwise, simply call
+            elif ((win_rate*pot["main"]["amount"]*5 > valid_actions[1]['amount']) or win_rate == 1):          
+                action = valid_actions[1]
+        elif valid_actions[1]['amount'] == 0 or (round_state['street']=="river" and valid_actions[1]['amount'] <= (pot["main"]["amount"]/5)):
+            action = valid_actions[1]
+        else:
+            # bad hand, fold
+            action = valid_actions[0]
+        return action['action'], action['amount']
     
         # -------------------------------------------------------------------------------------------------------#
         # Make sure that you call one of the actions (self.do_fold, self.do_call, self.do_raise, self.do_all_in)
@@ -55,6 +75,7 @@ class MyBot(BasePokerPlayer):  # Do not forget to make parent class as "BasePoke
 
     def receive_game_start_message(self, game_info):
         # Predefined variables for various game information --  feel free to use them however you like
+        self.nb_player = game_info['player_num']
         player_num = game_info["player_num"]
         max_round = game_info["rule"]["max_round"]
         small_blind_amount = game_info["rule"]["small_blind_amount"]
@@ -94,6 +115,5 @@ class MyBot(BasePokerPlayer):  # Do not forget to make parent class as "BasePoke
         action_info = valid_actions[2]
         amount = action_info['amount']['max']
         return action_info['action'], amount
-
 
 
