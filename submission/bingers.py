@@ -24,8 +24,13 @@ class binger(BasePokerPlayer):
         return int(pot_size * edge / (1 - call_threshold))
 
     def declare_action(self, valid_actions, hole_card, round_state):
-
         ourname = str(self)
+
+        myStack = 0
+        for i in round_state["seats"]:
+            if i['name'] == ourname:
+                myStack = i["stack"]
+
 
         # For your convenience:
         community_card = round_state["community_card"]  # array, starting from [] to [] of 5 elems
@@ -83,14 +88,14 @@ class binger(BasePokerPlayer):
             # if cant find name hes all in
             if ours == None:
                 print(f"[{self}] YOU ENTERED THE WRONG NAME")
-                return self.do_all_in(valid_actions)
+                return self.do_all_in(valid_actions, myStack)
 
             print(f"[{self}] {ours = }, {top = }")
 
             # if our score is below average (100 idk) then go all in
             if ours <= 100:
                 print(f"[{self}] All in")
-                return self.do_all_in(valid_actions)
+                return self.do_all_in(valid_actions, myStack)
             elif ours < top:
                 # something to make it riskier
                 if street == "preflop":
@@ -105,7 +110,7 @@ class binger(BasePokerPlayer):
                 if ours - bet < 100:
                     if win_rate >= 0.5:
                         print(f"[{self}] good winrate, all in")
-                        return self.do_all_in(valid_actions)
+                        return self.do_all_in(valid_actions, myStack)
                     else:
                         print(f"[{self}] bad winrate, folding")
                         return self.do_fold(valid_actions)
@@ -131,7 +136,7 @@ class binger(BasePokerPlayer):
             return self.do_call(valid_actions)
         elif bet >= max_raise:
             print(f"[{self}] All in {bet} >= {max_raise}")
-            return self.do_all_in(valid_actions)
+            return self.do_all_in(valid_actions, myStack)
         else:
             print(f"[{self}] Raise {bet}")
             return self.do_raise(valid_actions, bet)
@@ -174,7 +179,7 @@ class binger(BasePokerPlayer):
             return self.do_call(valid_actions)  # no negative raise lol
         return action_info["action"], amount
 
-    def do_all_in(self, valid_actions):
+    def do_all_in(self, valid_actions, stack):
         action_info = valid_actions[2]
-        amount = action_info["amount"]["max"]
+        amount = stack
         return action_info["action"], amount

@@ -1,14 +1,14 @@
 ai_players:
 - name: MasBot
   path: submission/TeamMasBot.py
-- name: waterbottle
+- name: WaterBottle
   path: submission/waterbottle.py
 - name: pray
   path: submission/pray.py
 - name: dhruv
   path: submission/dhruv-team/DhruvBot.py
-- name: waterbottle
-  path: submission/waterbottle.py
+- name: binger
+  path: submission/bingers.py
 - name: gto3
   path: submission/gto3.py
 

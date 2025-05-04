@@ -9,7 +9,7 @@ ai_players:
   path: submission/allin.py
 - name: adacada
   path: submission/adacadabra.py
-- name: bingers
+- name: binger
   path: submission/bingers.py
 ante: 0
 blind_structure: null
