@@ -26,11 +26,7 @@ class binger(BasePokerPlayer):
     def declare_action(self, valid_actions, hole_card, round_state):
         ourname = str(self)
 
-        myStack = 0
-        for i in round_state["seats"]:
-            if i['name'] == ourname:
-                myStack = i["stack"]
-
+    
 
         # For your convenience:
         community_card = round_state["community_card"]  # array, starting from [] to [] of 5 elems
@@ -88,14 +84,14 @@ class binger(BasePokerPlayer):
             # if cant find name hes all in
             if ours == None:
                 print(f"[{self}] YOU ENTERED THE WRONG NAME")
-                return self.do_all_in(valid_actions, myStack)
+                return self.do_all_in(valid_actions, round_state)
 
             print(f"[{self}] {ours = }, {top = }")
 
             # if our score is below average (100 idk) then go all in
             if ours <= 100:
                 print(f"[{self}] All in")
-                return self.do_all_in(valid_actions, myStack)
+                return self.do_all_in(valid_actions, round_state)
             elif ours < top:
                 # something to make it riskier
                 if street == "preflop":
@@ -110,7 +106,7 @@ class binger(BasePokerPlayer):
                 if ours - bet < 100:
                     if win_rate >= 0.5:
                         print(f"[{self}] good winrate, all in")
-                        return self.do_all_in(valid_actions, myStack)
+                        return self.do_all_in(valid_actions, round_state)
                     else:
                         print(f"[{self}] bad winrate, folding")
                         return self.do_fold(valid_actions)
@@ -136,10 +132,10 @@ class binger(BasePokerPlayer):
             return self.do_call(valid_actions)
         elif bet >= max_raise:
             print(f"[{self}] All in {bet} >= {max_raise}")
-            return self.do_all_in(valid_actions, myStack)
+            return self.do_all_in(valid_actions, round_state)
         else:
             print(f"[{self}] Raise {bet}")
-            return self.do_raise(valid_actions, bet)
+            return self.do_raise(valid_actions, bet, round_state)
 
         # -----------------------------------------------------------#
 
@@ -165,21 +161,54 @@ class binger(BasePokerPlayer):
     def do_fold(self, valid_actions):
         action_info = valid_actions[0]
         amount = action_info["amount"]
-        return action_info["action"], amount
+        return action_info["action"], int(amount)
 
     def do_call(self, valid_actions):
         action_info = valid_actions[1]
         amount = action_info["amount"]
-        return action_info["action"], amount
+        return action_info["action"], int(amount)
 
-    def do_raise(self, valid_actions, raise_amount):
+    def do_raise(self, valid_actions, raise_amount, round_state):
+        print(str(self))
+        name = str(self)
+        stack = self.search_stack(name, round_state)
+        
         action_info = valid_actions[2]
+        # amount has to be at least min -- this is the intended raise amount
         amount = max(action_info["amount"]["min"], raise_amount)
-        if amount <= 0:
-            return self.do_call(valid_actions)  # no negative raise lol
-        return action_info["action"], amount
 
-    def do_all_in(self, valid_actions, stack):
+        if (stack < 0):
+            print(f"Player: {name}, Stack: {stack}, Requested Raise: {raise_amount}, Final Amount: {amount}")
+            assert(1==0)
+
+        # cap the actual raise based on the player's actual stack
+        print(stack, amount)
+        if(amount == stack):
+            assert(1==0)
+        amount = min(amount, stack)
+        if amount <= 0:
+            assert(1==0)
+            return self.do_call(valid_actions)  # no negative raise lol
+        return action_info["action"], int(amount)
+
+    def do_all_in(self, valid_actions, round_state):
+        print(str(self))
+        name = str(self)
+        stack = self.search_stack(name, round_state)
+        if (stack < 0):
+            raise KeyError("Name not found")
+        
         action_info = valid_actions[2]
         amount = stack
         return action_info["action"], amount
+
+    # Gets the stack for a player with a given name
+    def search_stack(self, name, round_state):
+        stack = -1
+        print(name, str(self))
+        for i in round_state["seats"]:
+            if i['name'] == name:
+                print(f"Name found : {name} = {str(self)}")
+                stack = i["stack"]
+                print(stack)
+        return stack

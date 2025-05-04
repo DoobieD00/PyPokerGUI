@@ -1,19 +1,17 @@
-<div class="col-xs-2 player-{{"active" if player["state"]=="participating" else "folded"}}">
-  <i class="material-icons md-48
-    {{"inactive" if player["state"]=="folded" else ""}} 
-    {{"color-ai" if len(player["uuid"]) <= 2 else "color-human"}}">
-    {{ 'android' if len(player["uuid"]) <= 2 else 'face' }}
-  </i>
-  <div>
-    <span class="round-state-table-text player-name">{{player["name"]}}</span></br>
-    <span class="round-state-table-text player-stack">${{player["stack"]}}</span></br>
-    {% if str(round_state["dealer_btn"])==(player['uuid']) %}
-      <span class="label label-warning">Dealer</span>
-    {% end %}
-    <!--
-    {% if round_state["next_player"]==idx %}
-      <span class="label label-default">Turn</span>
-    {% end %}
-    -->
+<div class="col-xs-2 player-{{"active" if player["state"]=="participating" else "folded"}}" style="display: flex; justify-content: center; align-items: center; padding: 10px;">
+  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px; word-wrap: break-word;">
+    <i class="material-icons md-48
+      {{"inactive" if player["state"]=="folded" else ""}} 
+      {{"color-ai" if len(player["uuid"]) <= 2 else "color-human"}}"
+      style="margin-bottom: 10px; font-size: 50px;">
+      {{ 'android' if len(player["uuid"]) <= 2 else 'face' }}
+    </i>
+    <div style="text-align: center; word-wrap: break-word; overflow-wrap: break-word; max-width: 150px;">
+      <span class="round-state-table-text player-name" style="display: block; font-size: 20px; padding-bottom: 5px; padding-right: 10px; word-wrap: break-word; overflow-wrap: break-word; max-width: 150px;">{{player["name"]}}</span>
+      <span class="round-state-table-text player-stack" style="display: block; font-size: 20px; padding-bottom: 5px; padding-right: 10px; word-wrap: break-word; overflow-wrap: break-word; max-width: 150px;">${{player["stack"]}}</span>
+      {% if str(round_state["dealer_btn"])==(player['uuid']) %}
+        <span class="label label-warning" style="font-size: 20px; padding: 2px 5px; padding-right: 10px; word-wrap: break-word; overflow-wrap: break-word; max-width: 150px;">Dealer</span>
+      {% end %}
+    </div>
   </div>
 </div>

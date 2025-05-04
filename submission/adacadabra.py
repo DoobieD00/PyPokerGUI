@@ -111,7 +111,7 @@ class adacadabra(BasePokerPlayer):
 
             # Play monster hands aggressively
             if current_hand_strength > 0.95:
-                if can_raise: return self.do_all_in(valid_actions)
+                if can_raise: return self.do_all_in(valid_actions, round_state)
                 elif can_call: return self.do_call(valid_actions)
                 else: return self.do_fold(valid_actions)
 
@@ -122,7 +122,7 @@ class adacadabra(BasePokerPlayer):
                      raise_amount = min(max_raise, max(min_raise, int(current_pot * 0.6)))
                      raise_amount = max(raise_amount, amount_to_call + min_raise)
                      raise_amount = min(raise_amount, self.my_stack)
-                     return self.do_raise(valid_actions, raise_amount)
+                     return self.do_raise(valid_actions, raise_amount, round_state)
                  elif can_call:
                      return self.do_call(valid_actions)
                  else: return self.do_fold(valid_actions)
@@ -149,7 +149,7 @@ class adacadabra(BasePokerPlayer):
 
             # Play monster hands aggressively (all-in for max value)
             if current_hand_strength > 0.95:
-                if can_raise: return self.do_all_in(valid_actions)
+                if can_raise: return self.do_all_in(valid_actions, round_state)
                 elif can_call: return self.do_call(valid_actions)
                 else: return self.do_fold(valid_actions)
 
@@ -174,9 +174,9 @@ class adacadabra(BasePokerPlayer):
 
                      # Consider shoving if short stacked with a strong hand or draw
                      if is_short_stack and (current_hand_strength > 0.5 or hand_potential['outs'] >= 8):
-                          return self.do_all_in(valid_actions)
+                          return self.do_all_in(valid_actions, round_state)
                      else:
-                          return self.do_raise(valid_actions, raise_amount)
+                          return self.do_raise(valid_actions, raise_amount, round_state)
 
                  elif can_call:
                      # Call if estimated win probability is better than pot odds, adjusted for draws/short stack
@@ -259,7 +259,7 @@ class adacadabra(BasePokerPlayer):
                       bluff_raise_amount = min(max_raise, max(min_raise, int(amount_to_call * random.uniform(2.0, 3.0))))
                       # Ensure bluff raise is meaningful relative to pot
                       if bluff_raise_amount > current_pot * 0.5:
-                           return self.do_raise(valid_actions, bluff_raise_amount)
+                           return self.do_raise(valid_actions, bluff_raise_amount, round_state)
 
             # Default to Folding if no other profitable action
             if can_fold:
@@ -633,27 +633,50 @@ class adacadabra(BasePokerPlayer):
 
     # Helper functions to declare actions
     def do_fold(self, valid_actions):
-        """Returns the fold action."""
         action_info = valid_actions[0]
         amount = action_info["amount"]
-        return action_info['action'], amount
+        return action_info["action"], int(amount)
 
     def do_call(self, valid_actions):
-        """Returns the call action."""
         action_info = valid_actions[1]
         amount = action_info["amount"]
-        return action_info['action'], amount
+        return action_info["action"], int(amount)
 
-    def do_raise(self,  valid_actions, raise_amount):
-        """Returns the raise action with the specified amount."""
-        min_raise = valid_actions[2]['amount']['min']
-        max_raise = valid_actions[2]['amount']['max']
-        amount = max(min_raise, raise_amount)
-        amount = min(max_raise, amount)
-        return valid_actions[2]['action'], amount
+    def do_raise(self, valid_actions, raise_amount, round_state):
+        print(str(self))
+        name = str(self)
+        stack = self.search_stack(name, round_state)
+        if (stack < 0):
+            print(f"Player: {name}, Stack: {stack}, Requested Raise: {raise_amount}, Final Amount: {amount}")
+            assert(1==0)
 
-    def do_all_in(self,  valid_actions):
-        """Returns the all-in action."""
+        
         action_info = valid_actions[2]
-        amount = action_info['amount']['max']
-        return action_info['action'], amount
+        # amount has to be at least min
+        amount = max(action_info["amount"]["min"], raise_amount)
+        # at most stack amount
+        amount = min(amount, stack)
+        return action_info["action"], int(amount)
+
+    def do_all_in(self, valid_actions, round_state):
+        print(str(self))
+        name = str(self)
+        stack = self.search_stack(name, round_state)
+        if (stack < 0):
+            raise KeyError("Name not found")
+        
+        action_info = valid_actions[2]
+        amount = stack
+        return action_info["action"], amount
+
+    # Gets the stack for a player with a given name
+    def search_stack(self, name, round_state):
+        stack = -1
+        for i in round_state["seats"]:
+            if i['name'] == name:
+                print(f"Name found : {name} = {str(self)}")
+                stack = i["stack"]
+        return stack
+    
+    def __str__(self):
+        return type(self).__name__

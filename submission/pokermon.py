@@ -35,8 +35,8 @@ class pokermon(BasePokerPlayer):  # Do not forget to make parent class as "BaseP
         rank_order = {'2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7,
                     '8': 8, '9': 9, 'T': 10, 'J': 11, 'Q': 12, 'K': 13, 'A': 14}
         ranks = [card[1] for card in hole_card]
-        min_raise = valid_actions[2]['amount']['min']
-        max_raise = valid_actions[2]['amount']['max']
+        min_raise = max(valid_actions[2]['amount']['min'], 0)
+        max_raise = max(valid_actions[2]['amount']['max'], 0)
         call_amount = valid_actions[1]['amount']
 
         def is_really_strong_preflop():
@@ -133,21 +133,51 @@ class pokermon(BasePokerPlayer):  # Do not forget to make parent class as "BaseP
     def do_fold(self, valid_actions):
         action_info = valid_actions[0]
         amount = action_info["amount"]
-        return action_info['action'], amount
+        return action_info["action"], int(amount)
 
     def do_call(self, valid_actions):
         action_info = valid_actions[1]
         amount = action_info["amount"]
-        return action_info['action'], amount
-    
-    def do_raise(self,  valid_actions, raise_amount):
-        action_info = valid_actions[2]
-        amount = max(action_info['amount']['min'], raise_amount)
-        return action_info['action'], amount
-    
-    def do_all_in(self,  valid_actions):
-        action_info = valid_actions[2]
-        amount = action_info['amount']['max']
-        return action_info['action'], amount
+        return action_info["action"], int(amount)
 
+    def do_raise(self, valid_actions, raise_amount, round_state):
+        print(str(self))
+        name = str(self)
+        stack = self.search_stack(name, round_state)
+        if (stack < 0):
+            print(f"Player: {name}, Stack: {stack}, Requested Raise: {raise_amount}, Final Amount: {amount}")
+            assert(1==0)
+
+        
+        action_info = valid_actions[2]
+        # amount has to be at least min -- this is the intended raise amount
+        amount = max(action_info["amount"]["min"], raise_amount)
+
+        # cap the actual raise based on the player's actual stack
+        amount = min(amount, stack)
+        if amount <= 0:
+            assert(1==0)
+            return self.do_call(valid_actions)
+        return action_info["action"], int(amount)
+
+    def do_all_in(self, valid_actions, round_state):
+        print(str(self))
+        name = str(self)
+        stack = self.search_stack(name, round_state)
+        if (stack < 0):
+            raise KeyError("Name not found")
+        
+        action_info = valid_actions[2]
+        amount = stack
+        return action_info["action"], amount
+
+    # Gets the stack for a player with a given name
+    def search_stack(self, name, round_state):
+        stack = -1
+        print(name, str(self))
+        for i in round_state["seats"]:
+            if i['name'] == name:
+                print(f"Name found : {name} = {str(self)}")
+                stack = i["stack"]
+        return stack
 

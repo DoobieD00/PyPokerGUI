@@ -57,8 +57,8 @@ class BillionDollarBot(BasePokerPlayer):
             if act['action'] == action_type:
                 if amount is None:
                     return action_type, act.get('amount', 0)
-                min_amt = act['amount']['min']
-                max_amt = act['amount']['max']
+                min_amt = max(act['amount']['min'], 0)
+                max_amt = max(act['amount']['max'], 0)
                 if amount < min_amt:
                     return action_type, min_amt
                 if amount > max_amt:
@@ -84,10 +84,10 @@ class BillionDollarBot(BasePokerPlayer):
 
         if win_prob > self.thresholds['raise2'][stage]:
             choice = self._choose_action(valid_actions, 'raise',
-                                         self.thresholds['raise2'][stage] * valid_actions[-1]['amount']['min'])
+                                         self.thresholds['raise2'][stage] * max(valid_actions[-1]['amount']['min'], 0))
         elif win_prob > self.thresholds['raise1'][stage]:
             choice = self._choose_action(valid_actions, 'raise',
-                                         self.thresholds['raise1'][stage] * valid_actions[-1]['amount']['min'])
+                                         self.thresholds['raise1'][stage] * max(valid_actions[-1]['amount']['min'], 0))
         elif win_prob > self.thresholds['call'][stage]:
             choice = self._choose_action(valid_actions, 'call')
         else:

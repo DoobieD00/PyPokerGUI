@@ -293,7 +293,7 @@ MODERATE_WAIT_INTERVAL = {
 FAST_WAIT_INTERVAL = {
     'round_start_message': 0,
     'street_start_message': 0,
-    'ask_message': 1,
+    'ask_message': 0.5,
     'game_update_message': 1,
     'round_result_message': 5,
     'game_result_message': 5

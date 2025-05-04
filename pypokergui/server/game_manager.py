@@ -57,11 +57,12 @@ class GameManager(object):
         assert ask_message['type'] == 'ask' and uuid == ask_uuid
 
         try:
-            return ai_player.declare_action(
+            act, amount = ai_player.declare_action(
                     ask_message['message']['valid_actions'],
                     ask_message['message']['hole_card'],
                     ask_message['message']['round_state']
             )
+            return [act, int(amount)]
         except:
             # If error or fail to return a valid value,
             return ['fold', 0]
