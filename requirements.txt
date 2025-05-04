@@ -19,3 +19,5 @@ six==1.17.0
 submission==0.0.3
 tzdata==2025.2
 urllib3==2.4.0
+eval7
+

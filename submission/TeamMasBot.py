@@ -59,13 +59,13 @@ class TeamMasBot(BasePokerPlayer):  # Do not forget to make parent class as "Bas
                 return "raise", max_raise
             # otherwise, simply call
             elif ((win_rate*pot["main"]["amount"]*5 > valid_actions[1]['amount']) or win_rate == 1):          
-                action = valid_actions[1]
+                return self.do_call(valid_actions)
         elif valid_actions[1]['amount'] == 0 or (round_state['street']=="river" and valid_actions[1]['amount'] <= (pot["main"]["amount"]/5)):
-            action = valid_actions[1]
+            return self.do_call(valid_actions)
         else:
             # bad hand, fold
-            action = valid_actions[0]
-        return action['action'], action['amount']
+            return self.do_fold(valid_actions)
+        return self.do_fold(valid_actions)
     
         # -------------------------------------------------------------------------------------------------------#
         # Make sure that you call one of the actions (self.do_fold, self.do_call, self.do_raise, self.do_all_in)

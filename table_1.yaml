@@ -15,20 +15,6 @@ ai_players:
     path: submission/gto3.py
   - name: gtoWes
     path: submission/gtoWes.py
-  - name: billionD
-    path: submission/billiondollarbot.py
-  - name: bingers
-    path: submission/bingers.py
-  - name: pray
-    path: submission/pray.py
-  - name: allin
-    path: submission/allin.py
-  - name: jasper
-    path: submission/jasper/JasperBot.py
-  - name: nobot
-    path: submission/nobot.py
-  - name: dhruv
-    path: submission/dhruv-team/DhruvBot.py
 
   
 

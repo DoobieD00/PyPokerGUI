@@ -1,0 +1,25 @@
+ai_players:
+  - name: billionD
+    path: submission/billiondollarbot.py
+  - name: bingers
+    path: submission/bingers.py
+  - name: pray
+    path: submission/pray.py
+  - name: allin
+    path: submission/allin.py
+  - name: jasper
+    path: submission/jasper/JasperBot.py
+  - name: nobot
+    path: submission/nobot.py
+  - name: dhruv
+    path: submission/dhruv-team/DhruvBot.py
+  - name: Poker_AI
+    path: submission/Poker_AI/mybot.py
+
+  
+
+ante: 0
+blind_structure: null
+initial_stack: 300
+max_round: 10
+small_blind: 5

@@ -55,12 +55,7 @@ class GameManager(object):
         ai_player = self.ai_players[uuid]
         ask_uuid, ask_message = self.latest_messages[-1]
         assert ask_message['type'] == 'ask' and uuid == ask_uuid
-        return ai_player.declare_action(
-                    ask_message['message']['valid_actions'],
-                    ask_message['message']['hole_card'],
-                    ask_message['message']['round_state']
-            )
-        '''
+
         try:
             return ai_player.declare_action(
                     ask_message['message']['valid_actions'],
@@ -70,7 +65,6 @@ class GameManager(object):
         except:
             # If error or fail to return a valid value,
             return ['fold', 0]
-        '''
 
     def reset_hole_record(self):
         self.hole_cards = {}
