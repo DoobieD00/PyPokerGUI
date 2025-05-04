@@ -5,10 +5,10 @@ ai_players:
     path: submission/pokermon.py
   - name: dudu
     path: submission/dudu.py
-  - name: adacadabra
+  - name: adacada
     path: submission/adacadabra.py
-  - name: Poker_AI
-    path: submission/Poker_AI/mybot.py
+  - name: waterbottle
+    path: submission/waterbottle.py
 ante: 0
 blind_structure: null
 initial_stack: 300
