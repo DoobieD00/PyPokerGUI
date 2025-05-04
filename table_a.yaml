@@ -5,14 +5,13 @@ ai_players:
   path: submission/pokermon.py
 - name: dudu
   path: submission/dudu.py
-- name: adacada
+- name: adacadabra
   path: submission/adacadabra.py
-- name: waterbottle
+- name: WaterBottle
   path: submission/waterbottle.py
 - name: gigabrain
   path: submission/gigabrain/gigabrain.py
-- name: gto3
-  path: submission/gto3.py
+
 
 ante: 0
 blind_structure: null

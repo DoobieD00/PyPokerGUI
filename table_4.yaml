@@ -1,0 +1,18 @@
+ai_players:
+- name: jasper
+  path: submission/jasper/JasperBot.py
+- name: gigabrain
+  path: submission/gigabrain/gigabrain.py
+- name: gto3
+  path: submission/gto3.py
+- name: Poker_AI
+  path: submission/Poker_AI/mybot.py
+- name: gtoWes
+  path: submission/gtoWes.py
+- name: dudu
+  path: submission/dudu.py
+ante: 0
+blind_structure: null
+initial_stack: 100
+max_round: 10
+small_blind: 5

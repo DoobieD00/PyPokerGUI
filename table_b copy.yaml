@@ -1,16 +1,14 @@
 ai_players:
 - name: MasBot
   path: submission/TeamMasBot.py
-- name: pokermon
-  path: submission/pokermon.py
-- name: dudu
-  path: submission/dudu.py
-- name: adacada
-  path: submission/adacadabra.py
 - name: waterbottle
   path: submission/waterbottle.py
-- name: gigabrain
-  path: submission/gigabrain/gigabrain.py
+- name: pray
+  path: submission/pray.py
+- name: dhruv
+  path: submission/dhruv-team/DhruvBot.py
+- name: waterbottle
+  path: submission/waterbottle.py
 - name: gto3
   path: submission/gto3.py
 

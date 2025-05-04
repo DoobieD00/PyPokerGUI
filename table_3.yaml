@@ -1,0 +1,18 @@
+ai_players:
+- name: adacada
+  path: submission/adacadabra.py
+- name: binger
+  path: submission/bingers.py
+- name: pray
+  path: submission/pray.py
+- name: waterbottle
+  path: submission/waterbottle.py
+- name: dhruv
+  path: submission/dhruv-team/DhruvBot.py
+- name: MasBot
+  path: submission/TeamMasBot.py
+ante: 0
+blind_structure: null
+initial_stack: 100
+max_round: 10
+small_blind: 5

@@ -1,8 +1,4 @@
 ai_players:
-- name: gtoWes
-  path: submission/gtoWes.py
-- name: dudu
-  path: submission/dudu.py
 - name: pokermon
   path: submission/pokermon.py
 - name: billionD
@@ -11,6 +7,10 @@ ai_players:
   path: submission/nobot.py
 - name: allin
   path: submission/allin.py
+- name: adacada
+  path: submission/adacadabra.py
+- name: bingers
+  path: submission/bingers.py
 ante: 0
 blind_structure: null
 initial_stack: 100
