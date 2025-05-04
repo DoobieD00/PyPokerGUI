@@ -11,10 +11,10 @@ ai_players:
   path: submission/adacadabra.py
 - name: binger
   path: submission/binger.py
-- name: Poker_AI
-  path: submission/PokerAi/mybot.py
 - name: GigaBrain
   path: submission/gigabrain/gigabrain.py
+- name: DhruvBot
+  path: submission/dhruv-team/DhruvBot.py
 
 ante: 0
 blind_structure: null

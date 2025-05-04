@@ -1,0 +1,23 @@
+ai_players:
+- name: DuduBot
+  path: submission/dudu.py
+- name: gto3
+  path: submission/gto3.py
+- name: gtowes
+  path: submission/gtoWes.py
+- name: PrayToGod
+  path: submission/pray.py
+- name: WaterBottle
+  path: submission/waterbottle.py
+- name: TeamMasBot
+  path: submission/TeamMasBot.py
+- name: SMPEX
+  path: submission/SuperMegaPokertronEX.py
+- name: Poker_AI
+  path: submission/PokerAi/mybot.py
+
+ante: 0
+blind_structure: null
+initial_stack: 100
+max_round: 10
+small_blind: 5

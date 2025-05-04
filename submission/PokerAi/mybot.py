@@ -1,8 +1,10 @@
 import datetime
 import numpy as np
+import tensorflow as tf
 from tensorflow.keras import initializers
 from tensorflow.keras.layers import Input, Dense, Conv2D, Concatenate, Flatten
 from tensorflow.keras.models import Model
+
 
 
 from pypokerengine.players import BasePokerPlayer
