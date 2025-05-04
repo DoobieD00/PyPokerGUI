@@ -178,6 +178,8 @@ def _gen_game_update_message(handler, message, game_manager):
                 hand_out.append(hand)
             else:
                 print(f"UUID {hand['uuid']} does NOT exist in hole cards...")
+                print(game_manager.hole_cards)
+                print(hand_info)
                 raise (KeyError)
         hand_info = hand_out
         round_state = message['message']['round_state']

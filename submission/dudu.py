@@ -53,7 +53,8 @@ class DuduBot(BasePokerPlayer):
             pair_on_board = any(r in board_ranks for r in ranks)
             flush_draw    = (s0 == s1 and board_suits.count(s0) >= 2)
             straight_draw = False
-            unique        = sorted(set(ranks + board_ranks), key=lambda r: order.index(r))
+            unique = sorted(set([r for r in ranks + board_ranks if r in order]), key=lambda r: order.index(r))
+
             for combo in combinations(unique, 4):
                 idxs = [order.index(r) for r in combo]
                 if max(idxs) - min(idxs) == 3:

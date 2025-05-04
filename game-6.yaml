@@ -1,0 +1,23 @@
+ai_players:
+- name: BillionDollarBot
+  path: submission/billiondollarbot.py
+- name: allin
+  path: submission/allin.py
+- name: binger
+  path: submission/binger.py
+- name: GigaBrain
+  path: submission/gigabrain/gigabrain.py
+- name: DhruvBot
+  path: submission/dhruv-team/DhruvBot.py
+- name: SMPEX
+  path: submission/SuperMegaPokertronEX.py
+- name: Poker_AI
+  path: submission/PokerAi/mybot.py
+- name: adacadabra
+  path: submission/adacadabra.py
+  
+ante: 0
+blind_structure: null
+initial_stack: 100
+max_round: 10
+small_blind: 5

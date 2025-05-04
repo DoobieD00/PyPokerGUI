@@ -55,7 +55,7 @@ class DhruvBot(BasePokerPlayer):
         for _ in range(simulations):
             deck.shuffle()
             opp_hand = deck.peek(2)
-            remaining_community = deck.peek(5 - len(community), offset=2)
+            remaining_community = deck.peek(5 - len(community)) #offset=2 doesnt work, not an arg
 
             our_hand = hole + community + remaining_community
             opp_full = opp_hand + community + remaining_community

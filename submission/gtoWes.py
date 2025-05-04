@@ -140,8 +140,6 @@ class gtowes(BasePokerPlayer):  # Do not forget to make parent class as "BasePok
 
         # cap the actual raise based on the player's actual stack
         print(stack, amount)
-        if(amount == stack):
-            assert(1==0)
         amount = min(amount, stack)
         if amount <= 0:
             assert(1==0)

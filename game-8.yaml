@@ -1,0 +1,27 @@
+ai_players:
+- name: BillionDollarBot
+  path: submission/billiondollarbot.py
+- name: adacadabra
+  path: submission/adacadabra.py
+- name: GigaBrain
+  path: submission/gigabrain/gigabrain.py
+- name: gtowes
+  path: submission/gtoWes.py
+- name: PrayToGod
+  path: submission/pray.py
+- name: TeamMasBot
+  path: submission/TeamMasBot.py
+- name: JasperBot
+  path: submission/jasper/JasperBot.py
+- name: SMPEX
+  path: submission/SuperMegaPokertronEX.py
+- name: binger
+  path: submission/binger.py
+
+
+  
+ante: 0
+blind_structure: null
+initial_stack: 100
+max_round: 10
+small_blind: 5
