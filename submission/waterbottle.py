@@ -100,7 +100,7 @@ class WaterBottle(BasePokerPlayer):
                  raise_amount = min(max_raise, max(min_raise, int(current_pot * 0.75)))
                  raise_amount = max(raise_amount, amount_to_call + min_raise)
                  raise_amount = min(raise_amount, self.my_stack)
-                 return self.do_raise(valid_actions, raise_amount)
+                 return self.do_raise(valid_actions, raise_amount, round_state)
              elif can_call:
                  return self.do_call(valid_actions)
              else: return self.do_fold(valid_actions)
@@ -111,7 +111,7 @@ class WaterBottle(BasePokerPlayer):
                  raise_amount = max(raise_amount, amount_to_call + min_raise)
                  raise_amount = min(raise_amount, self.my_stack)
                  if my_position_category in ['late', 'blind'] or num_active_players <= 2:
-                      return self.do_raise(valid_actions, raise_amount)
+                      return self.do_raise(valid_actions, raise_amount, round_state)
                  else:
                       if can_call: return self.do_call(valid_actions)
                       else: return self.do_fold(valid_actions)
@@ -174,7 +174,7 @@ class WaterBottle(BasePokerPlayer):
              if random.random() < bluff_chance and self.my_stack > amount_to_call:
                   bluff_raise_amount = min(max_raise, max(min_raise, int(amount_to_call * 2.5)))
                   if bluff_raise_amount > current_pot * 0.4:
-                       return self.do_raise(valid_actions, bluff_raise_amount)
+                       return self.do_raise(valid_actions, bluff_raise_amount, round_state)
 
         if can_fold and risk_factor == 1.0:
             return self.do_fold(valid_actions)
@@ -487,21 +487,57 @@ class WaterBottle(BasePokerPlayer):
     def do_fold(self, valid_actions):
         action_info = valid_actions[0]
         amount = action_info["amount"]
-        return action_info['action'], amount
+        return action_info["action"], int(amount)
 
     def do_call(self, valid_actions):
         action_info = valid_actions[1]
         amount = action_info["amount"]
-        return action_info['action'], amount
+        return action_info["action"], int(amount)
 
-    def do_raise(self,  valid_actions, raise_amount):
-        min_raise = valid_actions[2]['amount']['min']
-        max_raise = valid_actions[2]['amount']['max']
-        amount = max(min_raise, raise_amount)
-        amount = min(max_raise, amount)
-        return valid_actions[2]['action'], amount
-
-    def do_all_in(self,  valid_actions):
+    def do_raise(self, valid_actions, raise_amount, round_state):
+        print(str(self))
+        name = str(self)
+        stack = self.search_stack(name, round_state)
+        
         action_info = valid_actions[2]
-        amount = action_info['amount']['max']
-        return action_info['action'], amount
+        # amount has to be at least min -- this is the intended raise amount
+        amount = max(action_info["amount"]["min"], raise_amount)
+
+        if (stack < 0):
+            print(f"Player: {name}, Stack: {stack}, Requested Raise: {raise_amount}, Final Amount: {amount}")
+            assert(1==0)
+
+        # cap the actual raise based on the player's actual stack
+        print(stack, amount)
+        if(amount == stack):
+            assert(1==0)
+        amount = min(amount, stack)
+        if amount <= 0:
+            assert(1==0)
+        return action_info["action"], int(amount)
+
+    def do_all_in(self, valid_actions, round_state):
+        print(str(self))
+        name = str(self)
+        stack = self.search_stack(name, round_state)
+        if (stack < 0):
+            raise KeyError("Name not found")
+        
+        action_info = valid_actions[2]
+        amount = stack
+        return action_info["action"], amount
+
+    # Gets the stack for a player with a given name
+    def search_stack(self, name, round_state):
+        stack = -1
+        print(name, str(self))
+        for i in round_state["seats"]:
+            if i['name'] == name:
+                print(f"Name found : {name} = {str(self)}")
+                stack = i["stack"]
+                print(stack)
+        return stack
+
+    def __str__(self):
+        return type(self).__name__
+

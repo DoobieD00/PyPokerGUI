@@ -66,16 +66,16 @@ class gto3(BasePokerPlayer):
         
         # Decision logic based on adjusted strength
         if street == 'preflop':
-            return self._preflop_strategy(valid_actions, ev_adjusted_strength, position, pot_odds)
+            return self._preflop_strategy(valid_actions, ev_adjusted_strength, position, pot_odds, round_state)
         else:
-            return self._postflop_strategy(valid_actions, ev_adjusted_strength, pot_odds, street, community_cards)
+            return self._postflop_strategy(valid_actions, ev_adjusted_strength, pot_odds, street, community_cards, round_state)
 
-    def _preflop_strategy(self, valid_actions, hand_strength, position, pot_odds):
+    def _preflop_strategy(self, valid_actions, hand_strength, position, pot_odds, round_state):
         """GTO-based preflop strategy"""
         # Premium hands - play aggressively
         if hand_strength > 0.8:
             if random.random() < 0.8:  # Mixing strategy for unpredictability
-                return self._get_raise_action(valid_actions, 2.5)  # Raise 2.5x BB
+                return self._get_raise_action(round_state, valid_actions, 2.5)  # Raise 2.5x BB
             else:
                 return self.do_call(valid_actions)
                 
@@ -83,14 +83,14 @@ class gto3(BasePokerPlayer):
         elif hand_strength > 0.6:
             pos_factor = self.position_value.get(position, 0.7)
             if random.random() < pos_factor:
-                return self._get_raise_action(valid_actions, 2.2)
+                return self._get_raise_action(round_state, valid_actions, 2.2)
             else:
                 return self.do_call(valid_actions)
                 
         # Playable hands - call or occasionally raise in good position
         elif hand_strength > 0.4:
             if position in ['late', 'bb'] and random.random() < 0.4:
-                return self._get_raise_action(valid_actions, 2.0)
+                return self._get_raise_action(round_state, valid_actions, 2.0)
             elif pot_odds > hand_strength:
                 return self.do_call(valid_actions)
             else:
@@ -99,13 +99,13 @@ class gto3(BasePokerPlayer):
         # Weak hands - mostly fold, occasionally bluff in late position
         else:
             if position == 'late' and random.random() < self.bluffing_threshold:
-                return self._get_raise_action(valid_actions, 2.0)  # Bluff raise
+                return self._get_raise_action(round_state, valid_actions, 2.0)  # Bluff raise
             elif pot_odds > 0.5 and hand_strength > 0.3:  # Very good pot odds
                 return self.do_call(valid_actions)
             else:
                 return self.do_fold(valid_actions)
 
-    def _postflop_strategy(self, valid_actions, hand_strength, pot_odds, street, community_cards):
+    def _postflop_strategy(self, valid_actions, hand_strength, pot_odds, street, community_cards, round_state):
         """GTO-based postflop strategy"""
         # Calculate board texture
         board_paired = self._has_pair(community_cards)
@@ -115,16 +115,16 @@ class gto3(BasePokerPlayer):
         if hand_strength > 0.8:
             # On draw-heavy boards, bet bigger to charge draws
             if board_draw and street != 'river':
-                return self._get_raise_action(valid_actions, 0.7)  # 70% pot bet
+                return self._get_raise_action(round_state, valid_actions, 0.7)  # 70% pot bet
             else:
-                return self._get_raise_action(valid_actions, 0.6)  # 60% pot bet
+                return self._get_raise_action(round_state, valid_actions, 0.6)  # 60% pot bet
                 
         # Medium-strong hands - value bet or call
         elif hand_strength > 0.65:
             if street == 'river':
-                return self._get_raise_action(valid_actions, 0.5)  # Smaller value bet on river
+                return self._get_raise_action(round_state, valid_actions, 0.5)  # Smaller value bet on river
             elif random.random() < 0.7:
-                return self._get_raise_action(valid_actions, 0.5)
+                return self._get_raise_action(round_state, valid_actions, 0.5)
             else:
                 return self.do_call(valid_actions)
                 
@@ -133,7 +133,7 @@ class gto3(BasePokerPlayer):
             if pot_odds > hand_strength and valid_actions[1]['amount'] > 0:
                 return self.do_call(valid_actions)
             elif valid_actions[1]['amount'] == 0 and random.random() < 0.3:  # We can check
-                return self._get_raise_action(valid_actions, 0.4)  # Small bet
+                return self._get_raise_action(round_state, valid_actions, 0.4)  # Small bet
             else:
                 return self.do_call(valid_actions)  # Check if possible
                 
@@ -146,7 +146,7 @@ class gto3(BasePokerPlayer):
                 
         # Bluffing opportunity
         elif street == 'river' and random.random() < self.bluffing_threshold:
-            return self._get_raise_action(valid_actions, 0.7)  # Bluff on river
+            return self._get_raise_action(round_state, valid_actions, 0.7)  # Bluff on river
             
         # Default action for weak hands
         else:
@@ -380,7 +380,7 @@ class gto3(BasePokerPlayer):
             else:
                 return 'middle'
 
-    def _get_raise_action(self, valid_actions, pot_fraction=None, bb_multiplier=None):
+    def _get_raise_action(self,round_state, valid_actions, pot_fraction=None, bb_multiplier=None):
         """Get a raise action with either pot percentage or BB multiplier"""
         action_info = valid_actions[2]
         min_raise = action_info["amount"]["min"]
@@ -391,7 +391,7 @@ class gto3(BasePokerPlayer):
         
         # If we're all-in or close to it
         if max_raise <= min_raise + 1:
-            return self.do_raise(valid_actions, max_raise)
+            return self.do_raise(valid_actions, max_raise, round_state)
             
         if pot_fraction is not None:
             # Calculate raise based on pot fraction
@@ -412,7 +412,7 @@ class gto3(BasePokerPlayer):
             # Default to min raise
             raise_amount = min_raise
             
-        return self.do_raise(valid_actions, raise_amount)
+        return self.do_raise(valid_actions, raise_amount, round_state)
 
     def _get_all_action_histories(self):
         """Safely get action histories"""
@@ -441,17 +441,57 @@ class gto3(BasePokerPlayer):
     # Helper functions for actions
     def do_fold(self, valid_actions):
         action_info = valid_actions[0]
-        return action_info['action'], action_info["amount"]
+        amount = action_info["amount"]
+        return action_info["action"], int(amount)
 
     def do_call(self, valid_actions):
         action_info = valid_actions[1]
-        return action_info['action'], action_info["amount"]
-    
-    def do_raise(self, valid_actions, raise_amount):
+        amount = action_info["amount"]
+        return action_info["action"], int(amount)
+
+    def do_raise(self, valid_actions, raise_amount, round_state):
+        print(str(self))
+        name = str(self)
+        stack = self.search_stack(name, round_state)
+        
         action_info = valid_actions[2]
-        amount = max(action_info['amount']['min'], min(action_info['amount']['max'], raise_amount))
-        return action_info['action'], amount
-    
-    def do_all_in(self, valid_actions):
+        # amount has to be at least min -- this is the intended raise amount
+        amount = max(action_info["amount"]["min"], raise_amount)
+
+        if (stack < 0):
+            print(f"Player: {name}, Stack: {stack}, Requested Raise: {raise_amount}, Final Amount: {amount}")
+            assert(1==0)
+
+        # cap the actual raise based on the player's actual stack
+        print(stack, amount)
+        if(amount == stack):
+            assert(1==0)
+        amount = min(amount, stack)
+        if amount <= 0:
+            assert(1==0)
+        return action_info["action"], int(amount)
+
+    def do_all_in(self, valid_actions, round_state):
+        print(str(self))
+        name = str(self)
+        stack = self.search_stack(name, round_state)
+        if (stack < 0):
+            raise KeyError("Name not found")
+        
         action_info = valid_actions[2]
-        return action_info['action'], action_info['amount']['max']
+        amount = stack
+        return action_info["action"], amount
+
+    # Gets the stack for a player with a given name
+    def search_stack(self, name, round_state):
+        stack = -1
+        print(name, str(self))
+        for i in round_state["seats"]:
+            if i['name'] == name:
+                print(f"Name found : {name} = {str(self)}")
+                stack = i["stack"]
+                print(stack)
+        return stack
+
+    def __str__(self):
+        return type(self).__name__

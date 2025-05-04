@@ -13,8 +13,8 @@ ai_players:
   path: submission/binger.py
 - name: GigaBrain
   path: submission/gigabrain/gigabrain.py
-- name: WaterBottle
-  path: submission/waterbottle.py
+- name: DhruvBot
+  path: submission/dhruv-team/DhruvBot.py
 
 ante: 0
 blind_structure: null

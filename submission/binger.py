@@ -26,8 +26,6 @@ class binger(BasePokerPlayer):
     def declare_action(self, valid_actions, hole_card, round_state):
         ourname = str(self)
 
-    
-
         # For your convenience:
         community_card = round_state["community_card"]  # array, starting from [] to [] of 5 elems
         street = round_state["street"]  # preflop, flop, turn, river

@@ -17,7 +17,7 @@ class DhruvBot(BasePokerPlayer):
 
             # 13% chance to go all-in preflop
             if rand < 0.17:
-                return self.do_all_in(valid_actions)
+                return self.do_all_in(valid_actions, round_state)
             # 12% chance to fold preflop
             elif rand < 0.25:
                 return self.do_fold(valid_actions)
@@ -27,7 +27,7 @@ class DhruvBot(BasePokerPlayer):
 
             # Use strength to decide action
             if strength > 0.8:
-                return self.do_all_in(valid_actions)
+                return self.do_all_in(valid_actions, round_state)
             elif strength > 0.6:
                 action_info = valid_actions[2]
                 amount = action_info['amount']['min']
@@ -41,8 +41,11 @@ class DhruvBot(BasePokerPlayer):
         return self.do_call(valid_actions) if random.random() < 0.7 else self.do_fold(valid_actions)
 
     def estimate_hand_strength(self, hole_cards, community_cards, simulations=100):
-        hole = [eval7.Card(self.convert_card(c)) for c in hole_cards]
-        community = [eval7.Card(self.convert_card(c)) for c in community_cards]
+        print(hole_cards)
+        hole = [eval7.Card(c[::-1][0] + c[::-1][1].lower()) for c in hole_cards]  # to match expected format
+
+        community = [eval7.Card(c[::-1][0] + c[::-1][1].lower()) for c in community_cards]  # to match expected format
+
         
         deck = eval7.Deck()
         for card in hole + community:
@@ -135,3 +138,6 @@ class DhruvBot(BasePokerPlayer):
                 stack = i["stack"]
                 print(stack)
         return stack
+    
+    def __str__(self):
+        return type(self).__name__

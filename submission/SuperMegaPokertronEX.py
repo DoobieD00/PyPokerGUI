@@ -117,14 +117,14 @@ class SMPEX(BasePokerPlayer):  # Do not forget to make parent class as "BasePoke
                 return self.preflop_action(valid_actions, hole_card)
         elif street == "flop":
             # #print(evaluator.evaluate(self.community_cards, hole_card), flush=True)
-            return self.flop_action(valid_actions, hole_card)
+            return self.flop_action(valid_actions, hole_card, round_state)
             # return self.do_fold(valid_actions)
         elif street == "turn":
             # return self.turn_action(valid_actions, hole_card, current_stack)
-            return self.turn_action(valid_actions,hole_card)
+            return self.turn_action(valid_actions,hole_card, round_state)
         elif street == "river":
             # return self.river_action(valid_actions, hole_card, current_stack)
-            return self.river_action(valid_actions,hole_card)
+            return self.river_action(valid_actions,hole_card, round_state)
         # Fallback to folding
         return self.do_fold(valid_actions)
 
@@ -161,7 +161,7 @@ class SMPEX(BasePokerPlayer):  # Do not forget to make parent class as "BasePoke
             #print("Max rank:", max_rank, file=sys.stderr, flush=True)
             return self.do_call(valid_actions)
 
-    def flop_action(self, valid_actions, hole_card):
+    def flop_action(self, valid_actions, hole_card, round_state):
         # --- new straight‐draw branch ---
         cards = gen_cards(hole_card) + gen_cards(self.community_cards)
 
@@ -176,9 +176,9 @@ class SMPEX(BasePokerPlayer):  # Do not forget to make parent class as "BasePoke
         if 0.2 <= win_rate <= 0.4:
             return self.do_call(valid_actions)
         elif 0.4 < win_rate <= 0.7:
-            return self.do_raise(valid_actions, round(self.starting_stack * 0.2))
+            return self.do_raise(valid_actions, round(self.starting_stack * 0.2), round_state)
         elif win_rate > 0.7:
-            return self.do_raise(valid_actions, round(self.starting_stack * 0.5))
+            return self.do_raise(valid_actions, round(self.starting_stack * 0.5), round_state)
         else:
             return self.do_call(valid_actions)
         RANK_MAP = {
@@ -198,7 +198,7 @@ class SMPEX(BasePokerPlayer):  # Do not forget to make parent class as "BasePoke
         }
 
 
-    def turn_action(self, valid_actions, hole_card):
+    def turn_action(self, valid_actions, hole_card, round_state):
         # --- new straight‐draw branch ---
         cards = gen_cards(hole_card) + gen_cards(self.community_cards)
 
@@ -213,9 +213,9 @@ class SMPEX(BasePokerPlayer):  # Do not forget to make parent class as "BasePoke
         if 0.2 <= win_rate <= 0.4:
             return self.do_call(valid_actions)
         elif 0.4 < win_rate <= 0.7:
-            return self.do_raise(valid_actions, round(self.starting_stack * 0.4))
+            return self.do_raise(valid_actions, round(self.starting_stack * 0.4), round_state)
         elif win_rate > 0.7:
-            return self.do_raise(valid_actions, round(self.starting_stack * 0.7))
+            return self.do_raise(valid_actions, round(self.starting_stack * 0.7), round_state)
         else:
             return self.do_call(valid_actions)
         RANK_MAP = {
@@ -234,7 +234,7 @@ class SMPEX(BasePokerPlayer):  # Do not forget to make parent class as "BasePoke
             "A": 14,
         }
 
-    def river_action(self, valid_actions, hole_card):
+    def river_action(self, valid_actions, hole_card, round_state):
 
         # --- existing equity‐based logic ---
         win_rate = estimate_hole_card_win_rate(
@@ -247,9 +247,9 @@ class SMPEX(BasePokerPlayer):  # Do not forget to make parent class as "BasePoke
         if 0.2 <= win_rate <= 0.5:
             return self.do_call(valid_actions)
         elif 0.5 < win_rate <= 0.7:
-            return self.do_raise(valid_actions, round(self.starting_stack * 0.5))
+            return self.do_raise(valid_actions, round(self.starting_stack * 0.5), round_state)
         elif win_rate > 0.7:
-            return self.do_raise(valid_actions, round(self.starting_stack * 0.8))
+            return self.do_raise(valid_actions, round(self.starting_stack * 0.8), round_state)
         else:
             return self.do_call(valid_actions)
         
@@ -370,6 +370,10 @@ class SMPEX(BasePokerPlayer):  # Do not forget to make parent class as "BasePoke
                 stack = i["stack"]
                 print(stack)
         return stack
+
+    def __str__(self):
+        return type(self).__name__
+
 
     def has_straight_potential(self, ranks):
         # Calculate gap between card ranks

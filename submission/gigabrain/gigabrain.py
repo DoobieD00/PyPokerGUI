@@ -105,3 +105,6 @@ class GigaBrain(BasePokerPlayer):
                 stack = i["stack"]
                 print(stack)
         return stack
+
+    def __str__(self):
+        return type(self).__name__
