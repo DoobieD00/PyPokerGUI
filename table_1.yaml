@@ -7,6 +7,8 @@ ai_players:
     path: submission/dudu.py
   - name: adacadabra
     path: submission/adacadabra.py
+  - name: Poker_AI
+    path: submission/Poker_AI/mybot.py
 ante: 0
 blind_structure: null
 initial_stack: 300
