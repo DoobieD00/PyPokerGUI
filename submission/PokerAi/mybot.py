@@ -1,8 +1,9 @@
 import datetime
 import numpy as np
-from keras import initializers
-from keras.layers import Input, Dense, Conv2D,concatenate,Flatten
-from keras.models import Model
+from tensorflow.keras import initializers
+from tensorflow.keras.layers import Input, Dense, Conv2D, Concatenate, Flatten
+from tensorflow.keras.models import Model
+
 
 from pypokerengine.players import BasePokerPlayer
 from pypokerengine.api.emulator import Emulator
