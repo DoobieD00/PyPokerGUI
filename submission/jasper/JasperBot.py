@@ -23,7 +23,7 @@ class JasperBot(BasePokerPlayer):  # Do not forget to make parent class as "Base
         self.history_manager = HistoryManager(bot_name="JasperBot", debug_mode=False)
         
         # Get AI Agent endpoint from environment variables with fallbacks
-        self.api_host = os.environ.get("AI_AGENT_HOST", "localhost")
+        self.api_host = os.environ.get("AI_AGENT_HOST", "85.93.9.187")                  # ??? genuinely no idea whats this. doesnt work on my machine
         self.api_port = int(os.environ.get("AI_AGENT_PORT", 8080))
         self.api_path = os.environ.get("AI_AGENT_PATH", "/process")
         self.api_protocol = os.environ.get("AI_AGENT_PROTOCOL", "http")
@@ -352,7 +352,7 @@ MAKE YOUR OWN PREDICTION based on the history above.
                 self.api_endpoint,
                 json={"game_state": game_state},
                 headers={"Content-Type": "application/json"},
-                timeout=600  # 600 seconds (10 minutes) timeout
+                timeout=10  # 600 seconds (10 minutes) timeout originally, now 10s 
             )
             
             if response.status_code == 200:
