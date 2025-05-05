@@ -4,6 +4,7 @@ import requests
 from pypokerengine.players import BasePokerPlayer
 from mapping import PokerLogMapper
 from history import HistoryManager
+import os
 
 # Notes
 # All cards follow this format: Rank + Suit : 4 of Hearts = 4h, 10 of Spades = Ts [2,3,4,5,6,7,8,9,T,J,Q,K,A] [s,c,d,h]
@@ -21,8 +22,16 @@ class JasperBot(BasePokerPlayer):  # Do not forget to make parent class as "Base
         # Initialize the history manager
         self.history_manager = HistoryManager(bot_name="JasperBot", debug_mode=False)
         
+        # Get AI Agent endpoint from environment variables with fallbacks
+        self.api_host = os.environ.get("AI_AGENT_HOST", "localhost")
+        self.api_port = int(os.environ.get("AI_AGENT_PORT", 8080))
+        self.api_path = os.environ.get("AI_AGENT_PATH", "/process")
+        self.api_protocol = os.environ.get("AI_AGENT_PROTOCOL", "http")
+
         # AI Agent endpoint for poker decisions
-        self.api_endpoint = "http://85.93.9.187:8080/process"
+        self.api_endpoint = f"{self.api_protocol}://{self.api_host}:{self.api_port}{self.api_path}"
+
+        print(f"AI Agent endpoint configured as: {self.api_endpoint}")
         
     #  we define the logic to make an action through this method. (so this method would be the core of your AI)
     def display_poker_state(self, hole_card, community_card, pot_amount, round_state, valid_actions):

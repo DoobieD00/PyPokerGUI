@@ -10,7 +10,7 @@ from pypokerengine.utils.game_state_utils import restore_game_state
 from pypokerengine.utils.card_utils import gen_cards, estimate_hole_card_win_rate
 
 
-class MyBot(BasePokerPlayer):
+class Poker_AI(BasePokerPlayer):
     my_uuid = ""
     suits = {'S': 0, 'H': 1, 'D': 2, 'C': 3}
     ranks = {'A': 12, 'K': 11, 'Q': 10, 'J': 9, 'T': 8, '9': 7, '8': 6, '7': 5, '6': 4, '5': 3, '4': 2, '3': 1, '2': 0}
@@ -104,11 +104,11 @@ class MyBot(BasePokerPlayer):
 
         def get_card_x(card):
             suit = card[0]
-            return MyBot.suits[suit]
+            return Poker_AI.suits[suit]
 
         def get_card_y(card):
             small_or_big_blind_turn = card[1]
-            return MyBot.ranks[small_or_big_blind_turn]
+            return Poker_AI.ranks[small_or_big_blind_turn]
 
         def get_street_grid(cards):
             grid = np.zeros((4,13))
@@ -139,14 +139,14 @@ class MyBot(BasePokerPlayer):
             self.action_sb = np.argmax(self.cur_Q_values)
 
             if self.has_played:
-                reward_sb = MyBot.y * np.max(self.cur_Q_values)
+                reward_sb = Poker_AI.y * np.max(self.cur_Q_values)
                 self.target_Q[0, self.action_sb] = reward_sb
                 self.vvh = self.vvh + 1
                 # new_name = 'my_model_weights'
                 # model.fit(self.old_state,self.target_Q,verbose=0)
                 self.prev_round_features.append(self.old_state)
                 self.prev_reward_state.append(self.target_Q)
-                if len(self.prev_round_features) > MyBot.max_replay_size:
+                if len(self.prev_round_features) > Poker_AI.max_replay_size:
                     del self.prev_round_features[0]
                     del self.prev_reward_state[0]
 
@@ -155,7 +155,7 @@ class MyBot(BasePokerPlayer):
 
         # Maybe don't modularise this, the program takes up more ram when this is modularised
         def pick_action():
-            if np.random.rand(1) < MyBot.e:
+            if np.random.rand(1) < Poker_AI.e:
                 self.action_sb = np.random.randint(0, 4)
 
             if self.action_sb == 3 or len(valid_actions) == 2:
@@ -223,22 +223,22 @@ class MyBot(BasePokerPlayer):
             self.target_Q = self.cur_Q_values
             #self.old_action = self.action_sb
 
-        preflop_actions = convert_to_image_grid(MyBot.starting_stack, round_state, 'preflop')
+        preflop_actions = convert_to_image_grid(Poker_AI.starting_stack, round_state, 'preflop')
 
         if round_state['street'] == 'flop':
             flop = round_state['community_card']
             flop_cards_img = get_street_grid(flop)
-            flop_actions = convert_to_image_grid(MyBot.starting_stack, round_state, 'flop')
+            flop_actions = convert_to_image_grid(Poker_AI.starting_stack, round_state, 'flop')
 
         if round_state['street'] == 'turn':
             turn = round_state['community_card'][3]
             turn_cards_img = get_street_grid([turn])
-            turn_actions = convert_to_image_grid(MyBot.starting_stack, round_state, 'turn')
+            turn_actions = convert_to_image_grid(Poker_AI.starting_stack, round_state, 'turn')
 
         if round_state['street'] == 'river':
             river = round_state['community_card'][4]
             river_cards_img = get_street_grid([river])
-            river_actions = convert_to_image_grid(MyBot.starting_stack, round_state, 'river')
+            river_actions = convert_to_image_grid(Poker_AI.starting_stack, round_state, 'river')
 
         # Form action features
         actions_feature = np.stack([preflop_actions,flop_actions,turn_actions,river_actions],axis=2).reshape((1,2,6,4))
@@ -267,17 +267,17 @@ class MyBot(BasePokerPlayer):
 
     def receive_game_start_message(self, game_info):
         if hasattr(self, 'uuid'):
-            MyBot.my_uuid = self.uuid
+            Poker_AI.my_uuid = self.uuid
         else:
             print("[Error] uuid not set before receive_game_start_message.")
 
 
     def receive_round_start_message(self, round_count, hole_card, seats):
         for seat in seats:
-            if MyBot.my_uuid == seat["uuid"]:
-                MyBot.my_starting_stack = seat["stack"]
+            if Poker_AI.my_uuid == seat["uuid"]:
+                Poker_AI.my_starting_stack = seat["stack"]
             else:
-                MyBot.opp_starting_stack = seat["stack"]
+                Poker_AI.opp_starting_stack = seat["stack"]
 
     def receive_street_start_message(self, street, round_state):
         pass
@@ -287,17 +287,17 @@ class MyBot(BasePokerPlayer):
 
     def receive_round_result_message(self, winners, hand_info, round_state):
         def get_real_reward():
-            if winners[0]['uuid'] == MyBot.my_uuid:
-                return winners[0]['stack'] - MyBot.my_starting_stack
+            if winners[0]['uuid'] == Poker_AI.my_uuid:
+                return winners[0]['stack'] - Poker_AI.my_starting_stack
             else:
-                return -(winners[0]['stack'] - MyBot.opp_starting_stack)
+                return -(winners[0]['stack'] - Poker_AI.opp_starting_stack)
 
         reward = int(get_real_reward())
         self.target_Q = self.model.predict(self.sb_features)
         if self.action_sb == 0:
             # If the best move is not FOLD, we punish AI severely
             if np.argmax(self.target_Q) != 0:
-                self.target_Q[0, self.action_sb] = reward * MyBot.y
+                self.target_Q[0, self.action_sb] = reward * Poker_AI.y
             # Else we reward it slightly
             else:
                 self.target_Q[0, self.action_sb] = 0
@@ -307,7 +307,7 @@ class MyBot(BasePokerPlayer):
         self.prev_round_features.append(self.sb_features)
         self.prev_reward_state.append(self.target_Q)
 
-        if len(self.prev_round_features) > MyBot.max_replay_size:
+        if len(self.prev_round_features) > Poker_AI.max_replay_size:
             del self.prev_round_features[0]
             del self.prev_reward_state[0]
 
@@ -321,7 +321,7 @@ class MyBot(BasePokerPlayer):
 
 
 def setup_ai():
-    return MyBot()
+    return Poker_AI()
 
 
 

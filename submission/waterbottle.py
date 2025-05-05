@@ -495,7 +495,6 @@ class WaterBottle(BasePokerPlayer):
         return action_info["action"], int(amount)
 
     def do_raise(self, valid_actions, raise_amount, round_state):
-        print(str(self))
         name = str(self)
         stack = self.search_stack(name, round_state)
         
@@ -503,25 +502,14 @@ class WaterBottle(BasePokerPlayer):
         # amount has to be at least min -- this is the intended raise amount
         amount = max(action_info["amount"]["min"], raise_amount)
 
-        if (stack < 0):
-            print(f"Player: {name}, Stack: {stack}, Requested Raise: {raise_amount}, Final Amount: {amount}")
-            assert(1==0)
-
         # cap the actual raise based on the player's actual stack
-        print(stack, amount)
-        if(amount == stack):
-            assert(1==0)
         amount = min(amount, stack)
-        if amount <= 0:
-            assert(1==0)
+        assert (amount > 0) , "Tried to raise an amount <= 0"           
         return action_info["action"], int(amount)
 
     def do_all_in(self, valid_actions, round_state):
-        print(str(self))
         name = str(self)
         stack = self.search_stack(name, round_state)
-        if (stack < 0):
-            raise KeyError("Name not found")
         
         action_info = valid_actions[2]
         amount = stack
@@ -530,12 +518,12 @@ class WaterBottle(BasePokerPlayer):
     # Gets the stack for a player with a given name
     def search_stack(self, name, round_state):
         stack = -1
-        print(name, str(self))
         for i in round_state["seats"]:
             if i['name'] == name:
-                print(f"Name found : {name} = {str(self)}")
+                print(f"[self.search_stack] => found name : {i['name']} = {name}")
                 stack = i["stack"]
-                print(stack)
+
+        assert (stack > -1), f"Unable to find matching player name in config for {name}"
         return stack
 
     def __str__(self):
