@@ -1,0 +1,52 @@
+game-5.yaml
+health check succeeded for script of [ submission/pokermon.py ]
+health check succeeded for script of [ submission/adacadabra.py ]
+health check succeeded for script of [ submission/dudu.py ]
+health check succeeded for script of [ submission/gtoWes.py ]
+health check succeeded for script of [ submission/TeamMasBot.py ]
+health check succeeded for script of [ submission/waterbottle.py ]
+health check succeeded for script of [ submission/gto3.py ]
+health check succeeded for script of [ submission/SuperMegaPokertronEX.py ]
+[Round 1] Hole cards: ['DQ', 'S9']
+  0%|          | 0/1000 [00:00<?, ?it/s] 21%|##        | 206/1000 [00:00<00:00, 2058.66it/s] 41%|####1     | 412/1000 [00:00<00:00, 2005.97it/s] 61%|######1   | 613/1000 [00:00<00:00, 1659.98it/s] 82%|########2 | 824/1000 [00:00<00:00, 1816.09it/s]100%|##########| 1000/1000 [00:00<00:00, 1864.27it/s]
+[self.search_stack] => found name : adacadabra = adacadabra
+[Decide R1] Street: preflop, Hole: ['DQ', 'S9'], Community: []
+=> Preflop: playing hand
+[Decide R1] Street: flop, Hole: ['DQ', 'S9'], Community: ['S5', 'H5', 'SK']
+=> Flop: folding
+[self.search_stack] => found name : SMPEX = SMPEX
+[Round 2] Hole cards: ['HJ', 'S5']
+[Decide R2] Street: preflop, Hole: ['HJ', 'S5'], Community: []
+=> Preflop: folding hand
+  0%|          | 0/1000 [00:00<?, ?it/s] 22%|##1       | 218/1000 [00:00<00:00, 2168.74it/s] 56%|#####6    | 562/1000 [00:00<00:00, 2905.59it/s] 90%|########9 | 896/1000 [00:00<00:00, 3094.29it/s]100%|##########| 1000/1000 [00:00<00:00, 2996.66it/s]
+[self.search_stack] => found name : pokermon = pokermon
+[self.search_stack] => found name : pokermon = pokermon
+[self.search_stack] => found name : pokermon = pokermon
+[Round 3] Hole cards: ['HK', 'D3']
+[Decide R3] Street: preflop, Hole: ['HK', 'D3'], Community: []
+=> Preflop: folding hand
+  0%|          | 0/1000 [00:00<?, ?it/s] 23%|##2       | 226/1000 [00:00<00:00, 2247.57it/s] 57%|#####6    | 566/1000 [00:00<00:00, 2923.52it/s] 90%|########9 | 896/1000 [00:00<00:00, 3083.10it/s]100%|##########| 1000/1000 [00:00<00:00, 2642.28it/s]
+[self.search_stack] => found name : gtowes = gtowes
+[Round 4] Hole cards: ['H3', 'S7']
+[Decide R4] Street: preflop, Hole: ['H3', 'S7'], Community: []
+=> Preflop: folding hand
+  0%|          | 0/1000 [00:00<?, ?it/s] 44%|####4     | 440/1000 [00:00<00:00, 4377.01it/s] 88%|########7 | 878/1000 [00:00<00:00, 4264.93it/s]100%|##########| 1000/1000 [00:00<00:00, 3561.30it/s]
+[Round 5] Hole cards: ['DT', 'H3']
+  0%|          | 0/1000 [00:00<?, ?it/s] 57%|#####6    | 570/1000 [00:00<00:00, 5660.29it/s]100%|##########| 1000/1000 [00:00<00:00, 5657.57it/s]
+[self.search_stack] => found name : gtowes = gtowes
+  0%|          | 0/1000 [00:00<?, ?it/s] 56%|#####5    | 558/1000 [00:00<00:00, 5542.00it/s]100%|##########| 1000/1000 [00:00<00:00, 6360.64it/s]
+[self.search_stack] => found name : gtowes = gtowes
+[Round 6] Hole cards: ['S8', 'DJ']
+  0%|          | 0/1000 [00:00<?, ?it/s] 45%|####4     | 449/1000 [00:00<00:00, 4447.04it/s] 89%|########9 | 894/1000 [00:00<00:00, 3850.74it/s]100%|##########| 1000/1000 [00:00<00:00, 3967.91it/s]
+[self.search_stack] => found name : pokermon = pokermon
+[Round 7] Hole cards: ['HA', 'C9']
+  0%|          | 0/1000 [00:00<?, ?it/s] 44%|####3     | 437/1000 [00:00<00:00, 4367.17it/s] 89%|########9 | 891/1000 [00:00<00:00, 4454.86it/s]100%|##########| 1000/1000 [00:00<00:00, 3856.68it/s]
+[self.search_stack] => found name : gtowes = gtowes
+[Round 8] Hole cards: ['HJ', 'C5']
+  0%|          | 0/1000 [00:00<?, ?it/s] 74%|#######3  | 739/1000 [00:00<00:00, 7324.33it/s]100%|##########| 1000/1000 [00:00<00:00, 7310.19it/s]
+[self.search_stack] => found name : gtowes = gtowes
+[Round 9] Hole cards: ['SQ', 'S2']
+  0%|          | 0/1000 [00:00<?, ?it/s] 52%|#####2    | 522/1000 [00:00<00:00, 5206.15it/s]100%|##########| 1000/1000 [00:00<00:00, 4677.93it/s]
+  0%|          | 0/1000 [00:00<?, ?it/s] 77%|#######6  | 769/1000 [00:00<00:00, 7614.43it/s]100%|##########| 1000/1000 [00:00<00:00, 7780.85it/s]
+[self.search_stack] => found name : gtowes = gtowes
+[self.search_stack] => found name : pokermon = pokermon
