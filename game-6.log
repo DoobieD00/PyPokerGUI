@@ -1,0 +1,292 @@
+game-6.yaml
+health check succeeded for script of [ submission/billiondollarbot.py ]
+health check succeeded for script of [ submission/allin.py ]
+health check succeeded for script of [ submission/binger.py ]
+health check succeeded for script of [ submission/gigabrain/gigabrain.py ]
+health check succeeded for script of [ submission/dhruv-team/DhruvBot.py ]
+health check succeeded for script of [ submission/SuperMegaPokertronEX.py ]
+2025-05-06 00:59:12.019264: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-05-06 00:59:12.772676: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-05-06 00:59:15.015669: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE3 SSE4.1 SSE4.2 AVX AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+✅ Loaded pretrained weights successfully.
+health check succeeded for script of [ submission/PokerAi/mybot.py ]
+✅ Loaded pretrained weights successfully.
+health check succeeded for script of [ submission/adacadabra.py ]
+[Error] uuid not set before receive_game_start_message.
+
+--- New decision point ---
+Hole cards: ['H7', 'DK']
+Community cards: []
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 10}, {'action': 'raise', 'amount': {'min': 15, 'max': 100}}]
+[self.search_stack] => found name : GigaBrain = GigaBrain
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 90ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 103ms/step
+[self.search_stack] => found name : adacadabra = adacadabra
+[self.search_stack] => found name : allin = allin
+[binger] Win rate: 0.296, Hole card: ['S9', 'D7'], Community card: []
+[binger] round_count = 1, self.max_round = 10
+[binger] Pot: 237, Bet amount: 31, Min raise: -1, Max raise: -1
+[binger] All in 31 >= -1
+[self.search_stack] => found name : binger = binger
+
+--- New decision point ---
+Hole cards: ['H7', 'DK']
+Community cards: []
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 100}, {'action': 'raise', 'amount': {'min': -1, 'max': -1}}]
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 16ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 29ms/step
+['CA', 'DJ']
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 18ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 31ms/step
+[self.search_stack] => found name : allin = allin
+[binger] Win rate: 0.29, Hole card: ['ST', 'H8'], Community card: []
+[binger] round_count = 2, self.max_round = 10
+[binger] Pot: 172, Bet amount: 20, Min raise: -1, Max raise: -1
+[binger] All in 20 >= -1
+[self.search_stack] => found name : binger = binger
+
+--- New decision point ---
+Hole cards: ['S6', 'H9']
+Community cards: []
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 95}, {'action': 'raise', 'amount': {'min': 159, 'max': 315}}]
+[self.search_stack] => found name : GigaBrain = GigaBrain
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 17ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 31ms/step
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 18ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 31ms/step
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 17ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 30ms/step
+[binger] Win rate: 0.118, Hole card: ['S4', 'H8'], Community card: []
+[binger] round_count = 3, self.max_round = 10
+[binger] Fold
+
+--- New decision point ---
+Hole cards: ['C6', 'D6']
+Community cards: []
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 19}, {'action': 'raise', 'amount': {'min': 28, 'max': 215}}]
+[self.search_stack] => found name : GigaBrain = GigaBrain
+['S2', 'D9']
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 17ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 31ms/step
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 16ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 28ms/step
+[binger] Win rate: 0.23, Hole card: ['CQ', 'C6'], Community card: []
+[binger] round_count = 4, self.max_round = 10
+[binger] Fold
+
+--- New decision point ---
+Hole cards: ['CT', 'C5']
+Community cards: []
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 15}, {'action': 'raise', 'amount': {'min': 20, 'max': 263}}]
+[self.search_stack] => found name : GigaBrain = GigaBrain
+['ST', 'DQ']
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 19ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 34ms/step
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 16ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 29ms/step
+[binger] Win rate: 0.346, Hole card: ['SQ', 'SA'], Community card: []
+[binger] round_count = 5, self.max_round = 10
+[binger] Pot: 15, Bet amount: 3, Min raise: 15, Max raise: 85
+[binger] Call 3 < 15
+
+--- New decision point ---
+Hole cards: ['HA', 'H9']
+Community cards: []
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 10}, {'action': 'raise', 'amount': {'min': 15, 'max': 293}}]
+['DT', 'D8']
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 17ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 31ms/step
+[binger] Win rate: 0.419, Hole card: ['SQ', 'SA'], Community card: []
+[binger] round_count = 5, self.max_round = 10
+[binger] Pot: 58, Bet amount: 20, Min raise: 28, Max raise: 85
+[binger] Call 20 < 28
+
+--- New decision point ---
+Hole cards: ['HA', 'H9']
+Community cards: []
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 22}, {'action': 'raise', 'amount': {'min': 28, 'max': 293}}]
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 17ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 30ms/step
+[binger] Win rate: 0.387, Hole card: ['SQ', 'SA'], Community card: []
+[binger] round_count = 5, self.max_round = 10
+[binger] Pot: 106, Bet amount: 31, Min raise: 40, Max raise: 85
+[binger] Call 31 < 40
+
+--- New decision point ---
+Hole cards: ['HA', 'H9']
+Community cards: []
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 34}, {'action': 'raise', 'amount': {'min': 40, 'max': 293}}]
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 17ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 30ms/step
+[binger] Win rate: 0.527, Hole card: ['SQ', 'SA'], Community card: []
+[binger] round_count = 5, self.max_round = 10
+[binger] Pot: 148, Bet amount: 75, Min raise: 52, Max raise: 85
+[binger] Raise 75
+[self.search_stack] => found name : binger = binger
+
+--- New decision point ---
+Hole cards: ['HA', 'H9']
+Community cards: []
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 46}, {'action': 'raise', 'amount': {'min': 52, 'max': 293}}]
+
+--- New decision point ---
+Hole cards: ['HA', 'H9']
+Community cards: ['C8', 'D5', 'CT']
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 247}}]
+
+--- New decision point ---
+Hole cards: ['HA', 'H9']
+Community cards: ['C8', 'D5', 'CT', 'S4']
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 247}}]
+
+--- New decision point ---
+Hole cards: ['HA', 'H9']
+Community cards: ['C8', 'D5', 'CT', 'S4', 'C6']
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 247}}]
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 15ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 29ms/step
+
+--- New decision point ---
+Hole cards: ['CQ', 'S8']
+Community cards: []
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 10}, {'action': 'raise', 'amount': {'min': 15, 'max': 247}}]
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 16ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 29ms/step
+[binger] Win rate: 0.148, Hole card: ['H3', 'C5'], Community card: []
+[binger] round_count = 6, self.max_round = 10
+[binger] Fold
+
+--- New decision point ---
+Hole cards: ['CQ', 'S8']
+Community cards: []
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 30}, {'action': 'raise', 'amount': {'min': 40, 'max': 247}}]
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 18ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 31ms/step
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 16ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 28ms/step
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 16ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 28ms/step
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 16ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 29ms/step
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 15ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 28ms/step
+['S5', 'DQ']
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 17ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 31ms/step
+[binger] Win rate: 0.273, Hole card: ['ST', 'D9'], Community card: []
+[binger] round_count = 7, self.max_round = 10
+[binger] Pot: 131, Bet amount: 10, Min raise: -1, Max raise: -1
+[binger] All in 10 >= -1
+[self.search_stack] => found name : binger = binger
+
+--- New decision point ---
+Hole cards: ['DA', 'HA']
+Community cards: []
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 74}, {'action': 'raise', 'amount': {'min': 106, 'max': 237}}]
+[self.search_stack] => found name : GigaBrain = GigaBrain
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 17ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 31ms/step
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 16ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 29ms/step
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 17ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 31ms/step
+[binger] Win rate: 0.283, Hole card: ['S8', 'CQ'], Community card: []
+[binger] round_count = 8, self.max_round = 10
+[binger] Pot: 71, Bet amount: 7, Min raise: -1, Max raise: -1
+[binger] All in 7 >= -1
+[self.search_stack] => found name : binger = binger
+
+--- New decision point ---
+Hole cards: ['D2', 'HK']
+Community cards: []
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 56}, {'action': 'raise', 'amount': {'min': 102, 'max': 358}}]
+['S6', 'DQ']
+
+--- New decision point ---
+Hole cards: ['D2', 'HK']
+Community cards: ['CT', 'S2', 'ST']
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 302}}]
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 19ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 33ms/step
+
+--- New decision point ---
+Hole cards: ['D2', 'HK']
+Community cards: ['CT', 'S2', 'ST']
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 18}, {'action': 'raise', 'amount': {'min': 36, 'max': 302}}]
+
+--- New decision point ---
+Hole cards: ['D2', 'HK']
+Community cards: ['CT', 'S2', 'ST', 'H5']
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 284}}]
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 17ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 31ms/step
+
+--- New decision point ---
+Hole cards: ['D2', 'HK']
+Community cards: ['CT', 'S2', 'ST', 'H5']
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 11}, {'action': 'raise', 'amount': {'min': 22, 'max': 284}}]
+
+--- New decision point ---
+Hole cards: ['D2', 'HK']
+Community cards: ['CT', 'S2', 'ST', 'H5', 'S7']
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 273}}]
+[self.search_stack] => found name : GigaBrain = GigaBrain
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 18ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 31ms/step
+
+--- New decision point ---
+Hole cards: ['D2', 'HK']
+Community cards: ['CT', 'S2', 'ST', 'H5', 'S7']
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 122}, {'action': 'raise', 'amount': {'min': 183, 'max': 273}}]
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 16ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 28ms/step
+
+--- New decision point ---
+Hole cards: ['HT', 'DJ']
+Community cards: []
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 10}, {'action': 'raise', 'amount': {'min': 15, 'max': 611}}]
+['D4', 'CQ']
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 18ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 32ms/step
+
+--- New decision point ---
+Hole cards: ['HT', 'DJ']
+Community cards: []
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 40}, {'action': 'raise', 'amount': {'min': 55, 'max': 611}}]
+[self.search_stack] => found name : GigaBrain = GigaBrain
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 18ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 31ms/step
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 16ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 29ms/step
