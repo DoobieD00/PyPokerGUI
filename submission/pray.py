@@ -203,8 +203,7 @@ class PrayToGod(BasePokerPlayer):
         amount = max(action_info["amount"]["min"], raise_amount)
 
         # cap the actual raise based on the player's actual stack
-        amount = min(amount, stack)
-        assert (amount > 0) , "Tried to raise an amount <= 0"           
+        amount = min(amount, stack)       
         return action_info["action"], int(amount)
 
     def do_all_in(self, valid_actions, round_state):
