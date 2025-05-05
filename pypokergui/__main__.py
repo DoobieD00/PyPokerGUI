@@ -6,6 +6,9 @@ import argparse
 import webbrowser
 import yaml
 
+sys.stdout.reconfigure(encoding='utf-8')
+
+
 # Path setup
 root = os.path.join(os.path.dirname(__file__), "..")
 src = os.path.join(root, "pypokergui")
@@ -56,4 +59,14 @@ def main():
         parser.print_help()
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        try:
+            sys.stdout.flush()
+            sys.stderr.flush()
+        except OSError:
+            pass  # stdout might already be closed when piping
+        print("\n[INFO] Interrupted by user. Exiting gracefully.", file=sys.stderr)
+        sys.exit(0)
+
