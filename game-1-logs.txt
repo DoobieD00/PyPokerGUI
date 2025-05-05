@@ -1,0 +1,195 @@
+python -m pypokergui serve game-1.yaml --port 8080 --speed fast
+game-1.yaml
+health check succeeded for script of [ submission/pokermon.py ]
+health check succeeded for script of [ submission/billiondollarbot.py ]
+health check succeeded for script of [ submission/nobot.py ]
+health check succeeded for script of [ submission/allin.py ]
+health check succeeded for script of [ submission/adacadabra.py ]
+health check succeeded for script of [ submission/binger.py ]
+health check succeeded for script of [ submission/gigabrain/gigabrain.py ]
+health check succeeded for script of [ submission/dhruv-team/DhruvBot.py ]
+[self.search_stack] => found name : allin = allin
+[binger] Win rate: 0.169, Hole card: ['H5', 'SK'], Community card: []
+[binger] round_count = 1, self.max_round = 10
+[binger] Fold
+
+--- New decision point ---
+Hole cards: ['CA', 'H2']
+Community cards: []
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 100}, {'action': 'raise', 'amount': {'min': -1, 'max': -1}}]
+[self.search_stack] => found name : DhruvBot = DhruvBot
+
+--- New decision point ---
+Hole cards: ['SQ', 'C4']
+Community cards: []
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 10}, {'action': 'raise', 'amount': {'min': 15, 'max': 415}}]
+[binger] Win rate: 0.406, Hole card: ['D9', 'C9'], Community card: []
+[binger] round_count = 2, self.max_round = 10
+[binger] Pot: 45, Bet amount: 14, Min raise: 15, Max raise: 100
+[binger] Call 14 < 15
+[binger] Win rate: 0.502, Hole card: ['D9', 'C9'], Community card: ['D4', 'DK', 'CK']
+[binger] round_count = 2, self.max_round = 10
+[binger] Pot: 45, Bet amount: 21, Min raise: 10, Max raise: 90
+[binger] Raise 21
+[self.search_stack] => found name : binger = binger
+
+--- New decision point ---
+Hole cards: ['SQ', 'C4']
+Community cards: ['D4', 'DK', 'CK']
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 21}, {'action': 'raise', 'amount': {'min': 42, 'max': 405}}]
+[binger] Win rate: 0.802, Hole card: ['D9', 'C9'], Community card: ['D4', 'DK', 'CK', 'D2']
+[binger] round_count = 2, self.max_round = 10
+[binger] Pot: 87, Bet amount: 74, Min raise: 10, Max raise: 69
+[binger] All in 74 >= 69
+[self.search_stack] => found name : binger = binger
+
+--- New decision point ---
+Hole cards: ['SQ', 'C4']
+Community cards: ['D4', 'DK', 'CK', 'D2']
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 69}, {'action': 'raise', 'amount': {'min': 138, 'max': 384}}]
+[binger] Win rate: 0.398, Hole card: ['SK', 'HA'], Community card: []
+[binger] round_count = 3, self.max_round = 10
+[binger] Pot: 35, Bet amount: 11, Min raise: 15, Max raise: 225
+[binger] Call 11 < 15
+
+--- New decision point ---
+Hole cards: ['H3', 'DK']
+Community cards: []
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 10}, {'action': 'raise', 'amount': {'min': 15, 'max': 315}}]
+[self.search_stack] => found name : GigaBrain = GigaBrain
+[binger] Win rate: 0.683, Hole card: ['SK', 'HA'], Community card: []
+[binger] round_count = 3, self.max_round = 10
+[binger] Pot: 294, Bet amount: 209, Min raise: -1, Max raise: -1
+[binger] All in 209 >= -1
+[self.search_stack] => found name : binger = binger
+[binger] Win rate: 0.167, Hole card: ['H4', 'D7'], Community card: []
+[binger] round_count = 4, self.max_round = 10
+[binger] Fold
+
+--- New decision point ---
+Hole cards: ['HT', 'CQ']
+Community cards: []
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 15}, {'action': 'raise', 'amount': {'min': 20, 'max': 345}}]
+
+--- New decision point ---
+Hole cards: ['HT', 'CQ']
+Community cards: ['SQ', 'H5', 'H2']
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 330}}]
+
+--- New decision point ---
+Hole cards: ['HT', 'CQ']
+Community cards: ['SQ', 'H5', 'H2', 'D2']
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 330}}]
+[self.search_stack] => found name : NoBot = NoBot
+[binger] Win rate: 0.243, Hole card: ['H9', 'CJ'], Community card: []
+[binger] round_count = 5, self.max_round = 10
+[binger] Fold
+
+--- New decision point ---
+Hole cards: ['H8', 'DT']
+Community cards: []
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 37}, {'action': 'raise', 'amount': {'min': 64, 'max': 330}}]
+[self.search_stack] => found name : GigaBrain = GigaBrain
+[binger] Win rate: 0.218, Hole card: ['DA', 'S3'], Community card: []
+[binger] round_count = 6, self.max_round = 10
+[binger] Fold
+
+--- New decision point ---
+Hole cards: ['CT', 'HJ']
+Community cards: []
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 10}, {'action': 'raise', 'amount': {'min': 15, 'max': 245}}]
+
+--- New decision point ---
+Hole cards: ['CT', 'HJ']
+Community cards: ['C8', 'HA', 'C4']
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 235}}]
+[self.search_stack] => found name : GigaBrain = GigaBrain
+
+--- New decision point ---
+Hole cards: ['S5', 'D6']
+Community cards: []
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 10}, {'action': 'raise', 'amount': {'min': 15, 'max': 270}}]
+[binger] Win rate: 0.3, Hole card: ['H2', 'SK'], Community card: []
+[binger] round_count = 7, self.max_round = 10
+[binger] Pot: 40, Bet amount: 5, Min raise: 20, Max raise: 215
+[binger] Call 5 < 20
+[binger] Win rate: 0.536, Hole card: ['H2', 'SK'], Community card: ['DT', 'DA', 'CA']
+[binger] round_count = 7, self.max_round = 10
+[binger] Pot: 45, Bet amount: 23, Min raise: 10, Max raise: 200
+[binger] Raise 23
+[self.search_stack] => found name : binger = binger
+[binger] Win rate: 0.234, Hole card: ['C9', 'D7'], Community card: []
+[binger] round_count = 8, self.max_round = 10
+[binger] Fold
+
+--- New decision point ---
+Hole cards: ['D8', 'HA']
+Community cards: []
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 10}, {'action': 'raise', 'amount': {'min': 15, 'max': 270}}]
+
+--- New decision point ---
+Hole cards: ['D8', 'HA']
+Community cards: ['D3', 'H6', 'D5']
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 260}}]
+
+--- New decision point ---
+Hole cards: ['D8', 'HA']
+Community cards: ['D3', 'H6', 'D5', 'S3']
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 260}}]
+
+--- New decision point ---
+Hole cards: ['D8', 'HA']
+Community cards: ['D3', 'H6', 'D5', 'S3', 'S8']
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 260}}]
+[self.search_stack] => found name : GigaBrain = GigaBrain
+[binger] Win rate: 0.245, Hole card: ['HT', 'C3'], Community card: []
+[binger] round_count = 9, self.max_round = 10
+[binger] last round !!! (round_count = 9, self.max_round = 10)
+[binger] ours = 240, top = 290
+[binger] preflop, calling
+
+--- New decision point ---
+Hole cards: ['DA', 'H7']
+Community cards: []
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 10}, {'action': 'raise', 'amount': {'min': 15, 'max': 295}}]
+
+--- New decision point ---
+Hole cards: ['DA', 'H7']
+Community cards: ['H9', 'H6', 'H8']
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 285}}]
+[binger] Win rate: 0.489, Hole card: ['HT', 'C3'], Community card: ['H9', 'H6', 'H8']
+[binger] round_count = 9, self.max_round = 10
+[binger] last round !!! (round_count = 9, self.max_round = 10)
+[binger] ours = 230, top = 285
+[binger] Pot: 30, Bet amount: 13, Min raise: 10, Max raise: 230
+[binger] Raise 13
+[self.search_stack] => found name : binger = binger
+
+--- New decision point ---
+Hole cards: ['DA', 'H7']
+Community cards: ['H9', 'H6', 'H8']
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 13}, {'action': 'raise', 'amount': {'min': 26, 'max': 285}}]
+
+--- New decision point ---
+Hole cards: ['DA', 'H7']
+Community cards: ['H9', 'H6', 'H8', 'D7']
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': 10, 'max': 272}}]
+[binger] Win rate: 0.818, Hole card: ['HT', 'C3'], Community card: ['H9', 'H6', 'H8', 'D7']
+[binger] round_count = 9, self.max_round = 10
+[binger] last round !!! (round_count = 9, self.max_round = 10)
+[binger] ours = 217, top = 272
+[binger] Pot: 56, Bet amount: 48, Min raise: 10, Max raise: 217
+[binger] Raise 48
+[self.search_stack] => found name : binger = binger
+
+--- New decision point ---
+Hole cards: ['DA', 'H7']
+Community cards: ['H9', 'H6', 'H8', 'D7']
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 48}, {'action': 'raise', 'amount': {'min': 96, 'max': 272}}]
+[self.search_stack] => found name : GigaBrain = GigaBrain
+[binger] Win rate: 0.816, Hole card: ['HT', 'C3'], Community card: ['H9', 'H6', 'H8', 'D7']
+[binger] round_count = 9, self.max_round = 10
+[binger] last round !!! (round_count = 9, self.max_round = 10)
+[binger] ours = 169, top = 170
+[binger] good winrate, all in
+[self.search_stack] => found name : binger = binger

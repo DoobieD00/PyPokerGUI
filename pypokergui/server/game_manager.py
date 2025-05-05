@@ -66,7 +66,9 @@ class GameManager(object):
             return [act, max(int(amount), 0)]
         except Exception as e:
             # If error or fail to return a valid value
-            print(f"Error in {type(ai_player.__name__)}: {e}: Default to fold")
+            print()
+            print(f"Error in {type(ai_player).__name__}: {e}: Default to fold")
+            print()
             return ['fold', 0]
 
     def reset_hole_record(self):
