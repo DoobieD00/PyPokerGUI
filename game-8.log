@@ -1,0 +1,1277 @@
+game-8.yaml
+health check succeeded for script of [ submission/billiondollarbot.py ]
+health check succeeded for script of [ submission/adacadabra.py ]
+health check succeeded for script of [ submission/gigabrain/gigabrain.py ]
+health check succeeded for script of [ submission/gtoWes.py ]
+health check succeeded for script of [ submission/pray.py ]
+health check succeeded for script of [ submission/TeamMasBot.py ]
+AI Agent endpoint configured as: http://85.93.9.187:8080/process
+health check succeeded for script of [ submission/jasper/JasperBot.py ]
+AI Agent endpoint configured as: http://85.93.9.187:8080/process
+health check succeeded for script of [ submission/SuperMegaPokertronEX.py ]
+health check succeeded for script of [ submission/binger.py ]
+--- New Game Starting ---
+Number of players: 9
+Max rounds: 10
+Initial small blind: 5
+Initial ante: 0
+----------------------------------------
+
+--- Starting Round 1 ---
+JasperBot receives hole cards: Jd, Ah
+Initial Stacks:
+  BillionDollarBot: 100 (participating)
+  adacadabra: 95 (participating)
+  GigaBrain: 90 (participating)
+  gtowes: 100 (participating)
+  PrayToGod: 100 (participating)
+  TeamMasBot: 100 (participating)
+  JasperBot: 100 (participating)
+  SMPEX: 100 (participating)
+  binger: 100 (participating)
+----------------------------------------
+
+--- Street Start: PREFLOP ---
+Pot: 15
+Next to act: gtowes
+  0%|          | 0/1000 [00:00<?, ?it/s]  6%|5         | 56/1000 [00:00<00:01, 557.03it/s] 23%|##2       | 228/1000 [00:00<00:00, 1234.91it/s] 35%|###5      | 352/1000 [00:00<00:00, 1180.67it/s] 47%|####7     | 474/1000 [00:00<00:00, 1193.18it/s] 59%|#####9    | 594/1000 [00:00<00:00, 981.36it/s]  72%|#######1  | 715/1000 [00:00<00:00, 1045.14it/s] 83%|########2 | 830/1000 [00:00<00:00, 1074.31it/s] 95%|#########5| 951/1000 [00:00<00:00, 1112.70it/s]100%|##########| 1000/1000 [00:00<00:00, 1083.21it/s]
+  ACTION: gtowes folds.
+DEBUG ▶ API payload: {'model': 'deepseek-ai/DeepSeek-V3-0324', 'messages': [{'role': 'system', 'content': '\nSYSTEM: You are an elite poker decision engine.  \nYou WILL follow the exact STRATEGY specification below and OUTPUT only a JSON object on one line:\n\n{"action":"FOLD|CALL|RAISE","amount":<int>}\n\nNo other text, commentary, or tags.\n\nBe very createive and strategic in your decisions. You are participating in a poker game and must make decisions based on the current GameState.\n\nThis poker game is part of a hackathon that I ABSOLUTELY NEED TO WIN PLEASE.\n\nREMEMBER: YOU ONLY HAVE 5 GAMES OR LESS TO PLAY IN TOTAL, MAKE SURE YOU DONT KEEP FOLDING AS I NEED TO WIN IN THESE LIMITED GAMES.\n\nthe tourney format for the bots would be round-robin, the winner will be decided after it has played all of its games, based on the score for each game\nyour total score = best 2 scores + worst non-zero score\n\nAnd, my the game configuration that will be run:\n\nante: 0\nblind_structure: null\ninitial_stack: 100\nmax_round: X \nsmall_blind: 5\n\nEverything always remains the same, except max rounds which will depend on the number of players (which are variable too)\n\nyour strategy needs to be EXTREMELY catered to this type of tournament, and does not need to be a generic one.\n\nNEVER repeat example outputs; ALWAYS tailor decisions to the specific GameState\nExamples:\n\nGameState: {"hole_cards": ["C2", "D7"], "community_cards": [], "position": "preflop", "stack_sizes": {}, "pot_size": 15, "betting_history": [], "allowed_actions": ["fold","call", "raise"]} Output: {"action": "CALL"}\n\nGameState: {"hole_cards": ["SA", "HA"], "community_cards": [], "position": "preflop", "stack_sizes": {}, "pot_size": 15, "betting_history": [], "allowed_actions": ["fold","call", "raise"]} Output: {"action": "RAISE", "amount": 45}\n\nNow, analyze the following GameState and provide your decision.\n\nINPUT: GameState:<JSON>  \nOUTPUT: {"action":"...","amount":...}  \n'}, {'role': 'user', 'content': 'GameState:{"hole_cards": ["CT", "CA"], "community_cards": [], "position": "preflop", "stack_sizes": {"0": 100, "1": 95, "2": 90, "3": 100, "4": 100, "5": 100, "6": 100, "7": 100, "8": 100}, "pot_size": 15, "betting_history": [{"street": "preflop", "actor": "1", "action": "SMALLBLIND", "amount": 5}, {"street": "preflop", "actor": "2", "action": "BIGBLIND", "amount": 10}, {"street": "preflop", "actor": "3", "action": "FOLD", "amount": 0}], "allowed_actions": ["fold", "call", "raise"]}'}], 'max_tokens': 64, 'temperature': 0.0, 'stream': False, 'stop': ['\n']}
+DEBUG ▶ HTTP status: 200
+DEBUG ▶ raw response: {'id': '0b38296e6e414132ac8009d8e33c191b', 'object': 'chat.completion', 'created': 1746457834, 'model': 'deepseek-ai/DeepSeek-V3-0324', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': '{"action":"RAISE","amount":30}', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 1}], 'usage': {'prompt_tokens': 691, 'total_tokens': 702, 'completion_tokens': 11, 'prompt_tokens_details': None}}
+DEBUG ▶ cleaned content: {"action":"RAISE","amount":30}
+DEBUG ▶ parsed decision: {'action': 'RAISE', 'amount': 30}
+[self.search_stack] => found name : PrayToGod = PrayToGod
+  ACTION: PrayToGod raises to 30 (pays 30).
+  ACTION: TeamMasBot folds.
+
+<HOLE_CARDS> ['DJ', 'HA'] </HOLE_CARDS>
+<COMMUNITY_CARDS> [] </COMMUNITY_CARDS>
+<POT> 45 </POT>
+<POSITION> Middle </POSITION>
+<STACK> 100 </STACK>
+<HAND> ['DJ', 'HA'] </HAND>
+
+<HISTORICAL_HAND_DATA>
+Current street: preflop
+Current hole cards: Jd, Ah
+<TABLE_INFO>
+  Player: BillionDollarBot, Position: Button, Stack: 100, State: participating
+  Player: adacadabra, Position: Small Blind, Stack: 95, State: participating
+  Player: GigaBrain, Position: Big Blind, Stack: 90, State: participating
+  Player: gtowes, Position: Early, Stack: 100, State: folded
+  Player: PrayToGod, Position: Early, Stack: 70, State: participating
+  Player: TeamMasBot, Position: Early, Stack: 100, State: folded
+  Player: JasperBot, Position: Middle, Stack: 100, State: participating
+  Player: SMPEX, Position: Middle, Stack: 100, State: participating
+  Player: binger, Position: Middle, Stack: 100, State: participating
+</TABLE_INFO>
+<STREET_ACTIONS>
+  adacadabra: SMALLBLIND (5)
+  GigaBrain: BIGBLIND (10)
+  gtowes: FOLD
+  PrayToGod: RAISE (30)
+  TeamMasBot: FOLD
+</STREET_ACTIONS>
+</HISTORICAL_HAND_DATA>
+<CURRENT_HAND_HISTORY>
+Round 1 (IN PROGRESS)
+Hole cards: Jd, Ah
+Opponent actions this round:
+  gtowes on preflop: FOLD
+  PrayToGod on preflop: RAISE (30)
+  TeamMasBot on preflop: FOLD
+</CURRENT_HAND_HISTORY>
+<PREVIOUS_ROUNDS_HISTORY>
+No previous rounds recorded yet.
+</PREVIOUS_ROUNDS_HISTORY>
+
+<OPPONENTS_JSON>
+{
+  "opponents": [
+    {
+      "id": "0",
+      "position": "Small Blind",
+      "stack": 100,
+      "history": {
+        "fold_to_5bb_shove": 0.0,
+        "call_range_width": 0.0,
+        "short_stack_adjustment": 1.0,
+        "observations": 0,
+        "last_10_hands": []
+      }
+    },
+    {
+      "id": "1",
+      "position": "Big Blind",
+      "stack": 95,
+      "history": {
+        "fold_to_5bb_shove": 0.0,
+        "call_range_width": 0.0,
+        "short_stack_adjustment": 1.0,
+        "observations": 0,
+        "last_10_hands": []
+      }
+    },
+    {
+      "id": "2",
+      "position": "Early",
+      "stack": 90,
+      "history": {
+        "fold_to_5bb_shove": 0.0,
+        "call_range_width": 0.0,
+        "short_stack_adjustment": 1.0,
+        "observations": 0,
+        "last_10_hands": []
+      }
+    },
+    {
+      "id": "3",
+      "position": "Early",
+      "stack": 100,
+      "history": {
+        "fold_to_5bb_shove": 0.0,
+        "call_range_width": 0.0,
+        "short_stack_adjustment": 1.0,
+        "observations": 1,
+        "last_10_hands": [
+          {
+            "action": "fold",
+            "amount": null,
+            "position": "Early",
+            "street": "preflop"
+          }
+        ]
+      }
+    },
+    {
+      "id": "4",
+      "position": "Early",
+      "stack": 100,
+      "history": {
+        "fold_to_5bb_shove": 0.0,
+        "call_range_width": 0.0,
+        "short_stack_adjustment": 1.0,
+        "observations": 1,
+        "last_10_hands": [
+          {
+            "action": "raise",
+            "amount": 30,
+            "position": "Early",
+            "street": "preflop"
+          }
+        ]
+      }
+    },
+    {
+      "id": "5",
+      "position": "Middle",
+      "stack": 100,
+      "history": {
+        "fold_to_5bb_shove": 0.0,
+        "call_range_width": 0.0,
+        "short_stack_adjustment": 1.0,
+        "observations": 1,
+        "last_10_hands": [
+          {
+            "action": "fold",
+            "amount": null,
+            "position": "Middle",
+            "street": "preflop"
+          }
+        ]
+      }
+    },
+    {
+      "id": "7",
+      "position": "Middle",
+      "stack": 100,
+      "history": {
+        "fold_to_5bb_shove": 0.0,
+        "call_range_width": 0.0,
+        "short_stack_adjustment": 1.0,
+        "observations": 0,
+        "last_10_hands": []
+      }
+    },
+    {
+      "id": "8",
+      "position": "Button",
+      "stack": 100,
+      "history": {
+        "fold_to_5bb_shove": 0.0,
+        "call_range_width": 0.0,
+        "short_stack_adjustment": 1.0,
+        "observations": 0,
+        "last_10_hands": []
+      }
+    }
+  ]
+}
+</OPPONENTS_JSON>
+
+<AVAILABLE_ACTIONS>
+1: Fold
+2: Call (amount: 30)
+3: Raise (min: 50, max: 100)
+</AVAILABLE_ACTIONS>
+
+MAKE YOUR OWN PREDICTION based on the history above.
+
+Waiting for response from AI Agent...
+Error communicating with AI Agent: HTTPConnectionPool(host='85.93.9.187', port=8080): Max retries exceeded with url: /process (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000024404C08410>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+  ACTION: JasperBot calls 30.
+  ACTION: SMPEX calls 30.
+[binger] Win rate: 0.195, Hole card: ['C6', 'DA'], Community card: []
+[binger] round_count = 1, self.max_round = 10
+[binger] Fold
+  ACTION: binger folds.
+  ACTION: BillionDollarBot folds.
+[self.search_stack] => found name : adacadabra = adacadabra
+  ACTION: adacadabra raises to 95 (pays 95).
+
+--- New decision point ---
+Hole cards: ['C5', 'C9']
+Community cards: []
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 95}, {'action': 'raise', 'amount': {'min': -1, 'max': -1}}]
+  ACTION: GigaBrain calls 95.
+DEBUG ▶ API payload: {'model': 'deepseek-ai/DeepSeek-V3-0324', 'messages': [{'role': 'system', 'content': '\nSYSTEM: You are an elite poker decision engine.  \nYou WILL follow the exact STRATEGY specification below and OUTPUT only a JSON object on one line:\n\n{"action":"FOLD|CALL|RAISE","amount":<int>}\n\nNo other text, commentary, or tags.\n\nBe very createive and strategic in your decisions. You are participating in a poker game and must make decisions based on the current GameState.\n\nThis poker game is part of a hackathon that I ABSOLUTELY NEED TO WIN PLEASE.\n\nREMEMBER: YOU ONLY HAVE 5 GAMES OR LESS TO PLAY IN TOTAL, MAKE SURE YOU DONT KEEP FOLDING AS I NEED TO WIN IN THESE LIMITED GAMES.\n\nthe tourney format for the bots would be round-robin, the winner will be decided after it has played all of its games, based on the score for each game\nyour total score = best 2 scores + worst non-zero score\n\nAnd, my the game configuration that will be run:\n\nante: 0\nblind_structure: null\ninitial_stack: 100\nmax_round: X \nsmall_blind: 5\n\nEverything always remains the same, except max rounds which will depend on the number of players (which are variable too)\n\nyour strategy needs to be EXTREMELY catered to this type of tournament, and does not need to be a generic one.\n\nNEVER repeat example outputs; ALWAYS tailor decisions to the specific GameState\nExamples:\n\nGameState: {"hole_cards": ["C2", "D7"], "community_cards": [], "position": "preflop", "stack_sizes": {}, "pot_size": 15, "betting_history": [], "allowed_actions": ["fold","call", "raise"]} Output: {"action": "CALL"}\n\nGameState: {"hole_cards": ["SA", "HA"], "community_cards": [], "position": "preflop", "stack_sizes": {}, "pot_size": 15, "betting_history": [], "allowed_actions": ["fold","call", "raise"]} Output: {"action": "RAISE", "amount": 45}\n\nNow, analyze the following GameState and provide your decision.\n\nINPUT: GameState:<JSON>  \nOUTPUT: {"action":"...","amount":...}  \n'}, {'role': 'user', 'content': 'GameState:{"hole_cards": ["CT", "CA"], "community_cards": [], "position": "preflop", "stack_sizes": {"0": 100, "1": 5, "2": 5, "3": 100, "4": 70, "5": 100, "6": 70, "7": 70, "8": 100}, "pot_size": 280, "betting_history": [{"street": "preflop", "actor": "1", "action": "SMALLBLIND", "amount": 5}, {"street": "preflop", "actor": "2", "action": "BIGBLIND", "amount": 10}, {"street": "preflop", "actor": "3", "action": "FOLD", "amount": 0}, {"street": "preflop", "actor": "4", "action": "RAISE", "amount": 30}, {"street": "preflop", "actor": "5", "action": "FOLD", "amount": 0}, {"street": "preflop", "actor": "6", "action": "CALL", "amount": 30}, {"street": "preflop", "actor": "7", "action": "CALL", "amount": 30}, {"street": "preflop", "actor": "8", "action": "FOLD", "amount": 0}, {"street": "preflop", "actor": "0", "action": "FOLD", "amount": 0}, {"street": "preflop", "actor": "1", "action": "RAISE", "amount": 95}, {"street": "preflop", "actor": "2", "action": "CALL", "amount": 95}], "allowed_actions": ["fold", "call", "raise"]}'}], 'max_tokens': 64, 'temperature': 0.0, 'stream': False, 'stop': ['\n']}
+DEBUG ▶ HTTP status: 200
+DEBUG ▶ raw response: {'id': 'c95f7246b6d043148abc805f2cc8469b', 'object': 'chat.completion', 'created': 1746457877, 'model': 'deepseek-ai/DeepSeek-V3-0324', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': '{"action":"CALL","amount":95}', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 1}], 'usage': {'prompt_tokens': 907, 'total_tokens': 918, 'completion_tokens': 11, 'prompt_tokens_details': None}}
+DEBUG ▶ cleaned content: {"action":"CALL","amount":95}
+DEBUG ▶ parsed decision: {'action': 'CALL', 'amount': 95}
+  ACTION: PrayToGod calls 95.
+
+<HOLE_CARDS> ['DJ', 'HA'] </HOLE_CARDS>
+<COMMUNITY_CARDS> [] </COMMUNITY_CARDS>
+<POT> 345 </POT>
+<POSITION> Middle </POSITION>
+<STACK> 70 </STACK>
+<HAND> ['DJ', 'HA'] </HAND>
+
+<HISTORICAL_HAND_DATA>
+Current street: preflop
+Current hole cards: Jd, Ah
+<TABLE_INFO>
+  Player: BillionDollarBot, Position: Button, Stack: 100, State: folded
+  Player: adacadabra, Position: Small Blind, Stack: 5, State: participating
+  Player: GigaBrain, Position: Big Blind, Stack: 5, State: participating
+  Player: gtowes, Position: Early, Stack: 100, State: folded
+  Player: PrayToGod, Position: Early, Stack: 5, State: participating
+  Player: TeamMasBot, Position: Early, Stack: 100, State: folded
+  Player: JasperBot, Position: Middle, Stack: 70, State: participating
+  Player: SMPEX, Position: Middle, Stack: 70, State: participating
+  Player: binger, Position: Middle, Stack: 100, State: folded
+</TABLE_INFO>
+<STREET_ACTIONS>
+  adacadabra: SMALLBLIND (5)
+  GigaBrain: BIGBLIND (10)
+  gtowes: FOLD
+  PrayToGod: RAISE (30)
+  TeamMasBot: FOLD
+  JasperBot: CALL (30)
+  SMPEX: CALL (30)
+  binger: FOLD
+  BillionDollarBot: FOLD
+  adacadabra: RAISE (95)
+  GigaBrain: CALL (95)
+  PrayToGod: CALL (95)
+</STREET_ACTIONS>
+</HISTORICAL_HAND_DATA>
+<CURRENT_HAND_HISTORY>
+Round 1 (IN PROGRESS)
+Hole cards: Jd, Ah
+My actions this round:
+  preflop: CALL (30)
+Opponent actions this round:
+  gtowes on preflop: FOLD
+  PrayToGod on preflop: RAISE (30)
+  TeamMasBot on preflop: FOLD
+  SMPEX on preflop: CALL (30)
+  binger on preflop: FOLD
+  BillionDollarBot on preflop: FOLD
+  adacadabra on preflop: RAISE (95)
+  GigaBrain on preflop: CALL (95)
+  PrayToGod on preflop: CALL (95)
+</CURRENT_HAND_HISTORY>
+<PREVIOUS_ROUNDS_HISTORY>
+No previous rounds recorded yet.
+</PREVIOUS_ROUNDS_HISTORY>
+
+<OPPONENTS_JSON>
+{
+  "opponents": [
+    {
+      "id": "0",
+      "position": "Small Blind",
+      "stack": 100,
+      "history": {
+        "fold_to_5bb_shove": 0.0,
+        "call_range_width": 0.0,
+        "short_stack_adjustment": 1.0,
+        "observations": 1,
+        "last_10_hands": [
+          {
+            "action": "fold",
+            "amount": null,
+            "position": "Small Blind",
+            "street": "preflop"
+          }
+        ]
+      }
+    },
+    {
+      "id": "1",
+      "position": "Big Blind",
+      "stack": 95,
+      "history": {
+        "fold_to_5bb_shove": 0.0,
+        "call_range_width": 0.0,
+        "short_stack_adjustment": 1.0,
+        "observations": 1,
+        "last_10_hands": [
+          {
+            "action": "raise",
+            "amount": 95,
+            "position": "Big Blind",
+            "street": "preflop"
+          }
+        ]
+      }
+    },
+    {
+      "id": "2",
+      "position": "Early",
+      "stack": 90,
+      "history": {
+        "fold_to_5bb_shove": 0.0,
+        "call_range_width": 0.0,
+        "short_stack_adjustment": 1.0,
+        "observations": 1,
+        "last_10_hands": [
+          {
+            "action": "call",
+            "amount": 95,
+            "position": "Early",
+            "street": "preflop"
+          }
+        ]
+      }
+    },
+    {
+      "id": "3",
+      "position": "Early",
+      "stack": 100,
+      "history": {
+        "fold_to_5bb_shove": 0.0,
+        "call_range_width": 0.0,
+        "short_stack_adjustment": 1.0,
+        "observations": 1,
+        "last_10_hands": [
+          {
+            "action": "fold",
+            "amount": null,
+            "position": "Early",
+            "street": "preflop"
+          }
+        ]
+      }
+    },
+    {
+      "id": "4",
+      "position": "Early",
+      "stack": 100,
+      "history": {
+        "fold_to_5bb_shove": 0.0,
+        "call_range_width": 0.0,
+        "short_stack_adjustment": 1.0,
+        "observations": 2,
+        "last_10_hands": [
+          {
+            "action": "raise",
+            "amount": 30,
+            "position": "Early",
+            "street": "preflop"
+          },
+          {
+            "action": "call",
+            "amount": 95,
+            "position": "Early",
+            "street": "preflop"
+          }
+        ]
+      }
+    },
+    {
+      "id": "5",
+      "position": "Middle",
+      "stack": 100,
+      "history": {
+        "fold_to_5bb_shove": 0.0,
+        "call_range_width": 0.0,
+        "short_stack_adjustment": 1.0,
+        "observations": 1,
+        "last_10_hands": [
+          {
+            "action": "fold",
+            "amount": null,
+            "position": "Middle",
+            "street": "preflop"
+          }
+        ]
+      }
+    },
+    {
+      "id": "7",
+      "position": "Middle",
+      "stack": 100,
+      "history": {
+        "fold_to_5bb_shove": 0.0,
+        "call_range_width": 0.0,
+        "short_stack_adjustment": 1.0,
+        "observations": 1,
+        "last_10_hands": [
+          {
+            "action": "call",
+            "amount": 30,
+            "position": "Middle",
+            "street": "preflop"
+          }
+        ]
+      }
+    },
+    {
+      "id": "8",
+      "position": "Button",
+      "stack": 100,
+      "history": {
+        "fold_to_5bb_shove": 0.0,
+        "call_range_width": 0.0,
+        "short_stack_adjustment": 1.0,
+        "observations": 1,
+        "last_10_hands": [
+          {
+            "action": "fold",
+            "amount": null,
+            "position": "Button",
+            "street": "preflop"
+          }
+        ]
+      }
+    }
+  ]
+}
+</OPPONENTS_JSON>
+
+<AVAILABLE_ACTIONS>
+1: Fold
+2: Call (amount: 95)
+</AVAILABLE_ACTIONS>
+
+MAKE YOUR OWN PREDICTION based on the history above.
+
+Waiting for response from AI Agent...
+Error communicating with AI Agent: HTTPConnectionPool(host='85.93.9.187', port=8080): Max retries exceeded with url: /process (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002440461E750>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+  ACTION: JasperBot calls 95.
+  ACTION: SMPEX calls 95.
+
+--- Street Start: FLOP ---
+Community Cards: [Ks, 7s, 8h]
+Pot: 475
+Next to act: adacadabra
+  ACTION: adacadabra checks.
+
+--- New decision point ---
+Hole cards: ['C5', 'C9']
+Community cards: ['SK', 'S7', 'H8']
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 0}, {'action': 'raise', 'amount': {'min': -1, 'max': -1}}]
+  ACTION: GigaBrain checks.
+DEBUG ▶ API payload: {'model': 'deepseek-ai/DeepSeek-V3-0324', 'messages': [{'role': 'system', 'content': '\nSYSTEM: You are an elite poker decision engine.  \nYou WILL follow the exact STRATEGY specification below and OUTPUT only a JSON object on one line:\n\n{"action":"FOLD|CALL|RAISE","amount":<int>}\n\nNo other text, commentary, or tags.\n\nBe very createive and strategic in your decisions. You are participating in a poker game and must make decisions based on the current GameState.\n\nThis poker game is part of a hackathon that I ABSOLUTELY NEED TO WIN PLEASE.\n\nREMEMBER: YOU ONLY HAVE 5 GAMES OR LESS TO PLAY IN TOTAL, MAKE SURE YOU DONT KEEP FOLDING AS I NEED TO WIN IN THESE LIMITED GAMES.\n\nthe tourney format for the bots would be round-robin, the winner will be decided after it has played all of its games, based on the score for each game\nyour total score = best 2 scores + worst non-zero score\n\nAnd, my the game configuration that will be run:\n\nante: 0\nblind_structure: null\ninitial_stack: 100\nmax_round: X \nsmall_blind: 5\n\nEverything always remains the same, except max rounds which will depend on the number of players (which are variable too)\n\nyour strategy needs to be EXTREMELY catered to this type of tournament, and does not need to be a generic one.\n\nNEVER repeat example outputs; ALWAYS tailor decisions to the specific GameState\nExamples:\n\nGameState: {"hole_cards": ["C2", "D7"], "community_cards": [], "position": "preflop", "stack_sizes": {}, "pot_size": 15, "betting_history": [], "allowed_actions": ["fold","call", "raise"]} Output: {"action": "CALL"}\n\nGameState: {"hole_cards": ["SA", "HA"], "community_cards": [], "position": "preflop", "stack_sizes": {}, "pot_size": 15, "betting_history": [], "allowed_actions": ["fold","call", "raise"]} Output: {"action": "RAISE", "amount": 45}\n\nNow, analyze the following GameState and provide your decision.\n\nINPUT: GameState:<JSON>  \nOUTPUT: {"action":"...","amount":...}  \n'}, {'role': 'user', 'content': 'GameState:{"hole_cards": ["CT", "CA"], "community_cards": ["SK", "S7", "H8"], "position": "flop", "stack_sizes": {"0": 100, "1": 5, "2": 5, "3": 100, "4": 5, "5": 100, "6": 5, "7": 5, "8": 100}, "pot_size": 475, "betting_history": [{"street": "preflop", "actor": "1", "action": "SMALLBLIND", "amount": 5}, {"street": "preflop", "actor": "2", "action": "BIGBLIND", "amount": 10}, {"street": "preflop", "actor": "3", "action": "FOLD", "amount": 0}, {"street": "preflop", "actor": "4", "action": "RAISE", "amount": 30}, {"street": "preflop", "actor": "5", "action": "FOLD", "amount": 0}, {"street": "preflop", "actor": "6", "action": "CALL", "amount": 30}, {"street": "preflop", "actor": "7", "action": "CALL", "amount": 30}, {"street": "preflop", "actor": "8", "action": "FOLD", "amount": 0}, {"street": "preflop", "actor": "0", "action": "FOLD", "amount": 0}, {"street": "preflop", "actor": "1", "action": "RAISE", "amount": 95}, {"street": "preflop", "actor": "2", "action": "CALL", "amount": 95}, {"street": "preflop", "actor": "4", "action": "CALL", "amount": 95}, {"street": "preflop", "actor": "6", "action": "CALL", "amount": 95}, {"street": "preflop", "actor": "7", "action": "CALL", "amount": 95}, {"street": "flop", "actor": "1", "action": "CALL", "amount": 0}, {"street": "flop", "actor": "2", "action": "CALL", "amount": 0}], "allowed_actions": ["fold", "call", "raise"]}'}], 'max_tokens': 64, 'temperature': 0.0, 'stream': False, 'stop': ['\n']}
+DEBUG ▶ HTTP status: 200
+DEBUG ▶ raw response: {'id': 'bb887fb4c3c146aca9eb79f3402c9eca', 'object': 'chat.completion', 'created': 1746457888, 'model': 'deepseek-ai/DeepSeek-V3-0324', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': '{"action":"RAISE","amount":100}', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 1}], 'usage': {'prompt_tokens': 1049, 'total_tokens': 1060, 'completion_tokens': 11, 'prompt_tokens_details': None}}
+DEBUG ▶ cleaned content: {"action":"RAISE","amount":100}
+DEBUG ▶ parsed decision: {'action': 'RAISE', 'amount': 100}
+[self.search_stack] => found name : PrayToGod = PrayToGod
+  ACTION: PrayToGod raises to 5 (all-in) (pays 5).
+
+<HOLE_CARDS> ['DJ', 'HA'] </HOLE_CARDS>
+<COMMUNITY_CARDS> ['SK', 'S7', 'H8'] </COMMUNITY_CARDS>
+<POT> 480 </POT>
+<POSITION> Middle </POSITION>
+<STACK> 5 </STACK>
+<HAND> ['DJ', 'HA'] </HAND>
+
+<HISTORICAL_HAND_DATA>
+Current street: flop
+Current hole cards: Jd, Ah
+Current community cards: Ks, 7s, 8h
+<TABLE_INFO>
+  Player: BillionDollarBot, Position: Button, Stack: 100, State: folded
+  Player: adacadabra, Position: Small Blind, Stack: 5, State: participating
+  Player: GigaBrain, Position: Big Blind, Stack: 5, State: participating
+  Player: gtowes, Position: Early, Stack: 100, State: folded
+  Player: PrayToGod, Position: Early, Stack: 0, State: allin
+  Player: TeamMasBot, Position: Early, Stack: 100, State: folded
+  Player: JasperBot, Position: Middle, Stack: 5, State: participating
+  Player: SMPEX, Position: Middle, Stack: 5, State: participating
+  Player: binger, Position: Middle, Stack: 100, State: folded
+</TABLE_INFO>
+<STREET_ACTIONS>
+  adacadabra: CALL
+  GigaBrain: CALL
+  PrayToGod: RAISE (5)
+</STREET_ACTIONS>
+</HISTORICAL_HAND_DATA>
+<CURRENT_HAND_HISTORY>
+Round 1 (IN PROGRESS)
+Hole cards: Jd, Ah
+Community cards: Ks, 7s, 8h
+My actions this round:
+  preflop: CALL (30)
+  preflop: CALL (95)
+Opponent actions this round:
+  gtowes on preflop: FOLD
+  PrayToGod on preflop: RAISE (30)
+  TeamMasBot on preflop: FOLD
+  SMPEX on preflop: CALL (30)
+  binger on preflop: FOLD
+  BillionDollarBot on preflop: FOLD
+  adacadabra on preflop: RAISE (95)
+  GigaBrain on preflop: CALL (95)
+  PrayToGod on preflop: CALL (95)
+  SMPEX on preflop: CALL (95)
+  adacadabra on flop: CALL
+  GigaBrain on flop: CALL
+  PrayToGod on flop: RAISE (5)
+</CURRENT_HAND_HISTORY>
+<PREVIOUS_ROUNDS_HISTORY>
+No previous rounds recorded yet.
+</PREVIOUS_ROUNDS_HISTORY>
+
+<OPPONENTS_JSON>
+{
+  "opponents": [
+    {
+      "id": "0",
+      "position": "Small Blind",
+      "stack": 100,
+      "history": {
+        "fold_to_5bb_shove": 0.0,
+        "call_range_width": 0.0,
+        "short_stack_adjustment": 1.0,
+        "observations": 1,
+        "last_10_hands": [
+          {
+            "action": "fold",
+            "amount": null,
+            "position": "Small Blind",
+            "street": "preflop"
+          }
+        ]
+      }
+    },
+    {
+      "id": "1",
+      "position": "Big Blind",
+      "stack": 95,
+      "history": {
+        "fold_to_5bb_shove": 0.0,
+        "call_range_width": 0.0,
+        "short_stack_adjustment": 1.0,
+        "observations": 2,
+        "last_10_hands": [
+          {
+            "action": "raise",
+            "amount": 95,
+            "position": "Big Blind",
+            "street": "preflop"
+          },
+          {
+            "action": "call",
+            "amount": null,
+            "position": "Big Blind",
+            "street": "flop"
+          }
+        ]
+      }
+    },
+    {
+      "id": "2",
+      "position": "Early",
+      "stack": 90,
+      "history": {
+        "fold_to_5bb_shove": 0.0,
+        "call_range_width": 0.0,
+        "short_stack_adjustment": 1.0,
+        "observations": 2,
+        "last_10_hands": [
+          {
+            "action": "call",
+            "amount": 95,
+            "position": "Early",
+            "street": "preflop"
+          },
+          {
+            "action": "call",
+            "amount": null,
+            "position": "Early",
+            "street": "flop"
+          }
+        ]
+      }
+    },
+    {
+      "id": "3",
+      "position": "Early",
+      "stack": 100,
+      "history": {
+        "fold_to_5bb_shove": 0.0,
+        "call_range_width": 0.0,
+        "short_stack_adjustment": 1.0,
+        "observations": 1,
+        "last_10_hands": [
+          {
+            "action": "fold",
+            "amount": null,
+            "position": "Early",
+            "street": "preflop"
+          }
+        ]
+      }
+    },
+    {
+      "id": "4",
+      "position": "Early",
+      "stack": 100,
+      "history": {
+        "fold_to_5bb_shove": 0.0,
+        "call_range_width": 0.0,
+        "short_stack_adjustment": 1.0,
+        "observations": 3,
+        "last_10_hands": [
+          {
+            "action": "raise",
+            "amount": 30,
+            "position": "Early",
+            "street": "preflop"
+          },
+          {
+            "action": "call",
+            "amount": 95,
+            "position": "Early",
+            "street": "preflop"
+          },
+          {
+            "action": "raise",
+            "amount": 5,
+            "position": "Early",
+            "street": "flop"
+          }
+        ]
+      }
+    },
+    {
+      "id": "5",
+      "position": "Middle",
+      "stack": 100,
+      "history": {
+        "fold_to_5bb_shove": 0.0,
+        "call_range_width": 0.0,
+        "short_stack_adjustment": 1.0,
+        "observations": 1,
+        "last_10_hands": [
+          {
+            "action": "fold",
+            "amount": null,
+            "position": "Middle",
+            "street": "preflop"
+          }
+        ]
+      }
+    },
+    {
+      "id": "7",
+      "position": "Middle",
+      "stack": 100,
+      "history": {
+        "fold_to_5bb_shove": 0.0,
+        "call_range_width": 0.0,
+        "short_stack_adjustment": 1.0,
+        "observations": 2,
+        "last_10_hands": [
+          {
+            "action": "call",
+            "amount": 30,
+            "position": "Middle",
+            "street": "preflop"
+          },
+          {
+            "action": "call",
+            "amount": 95,
+            "position": "Middle",
+            "street": "preflop"
+          }
+        ]
+      }
+    },
+    {
+      "id": "8",
+      "position": "Button",
+      "stack": 100,
+      "history": {
+        "fold_to_5bb_shove": 0.0,
+        "call_range_width": 0.0,
+        "short_stack_adjustment": 1.0,
+        "observations": 1,
+        "last_10_hands": [
+          {
+            "action": "fold",
+            "amount": null,
+            "position": "Button",
+            "street": "preflop"
+          }
+        ]
+      }
+    }
+  ]
+}
+</OPPONENTS_JSON>
+
+<AVAILABLE_ACTIONS>
+1: Fold
+2: Call (amount: 5)
+</AVAILABLE_ACTIONS>
+
+MAKE YOUR OWN PREDICTION based on the history above.
+
+Waiting for response from AI Agent...
+Error communicating with AI Agent: HTTPConnectionPool(host='85.93.9.187', port=8080): Max retries exceeded with url: /process (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000024402ED2E90>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+  ACTION: JasperBot calls 5.
+  ACTION: SMPEX calls 5.
+  ACTION: adacadabra calls 5.
+
+--- New decision point ---
+Hole cards: ['C5', 'C9']
+Community cards: ['SK', 'S7', 'H8']
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 5}, {'action': 'raise', 'amount': {'min': -1, 'max': -1}}]
+Error in declare_action: low >= high
+  ACTION: GigaBrain calls 5.
+
+--- Street Start: TURN ---
+Community Cards: [Ks, 7s, 8h, Th]
+Pot: 500
+Waiting for next action...
+
+--- Street Start: RIVER ---
+Community Cards: [Ks, 7s, 8h, Th, 4d]
+Pot: 500
+Waiting for next action...
+
+--- Round End ---
+Final Pot: 500
+PrayToGod wins the pot.
+  Final stack: 500
+
+--- Showdown ---
+Board: [Ks, 7s, 8h, Th, 4d]
+  adacadabra shows Qs, Jc => HIGH CARD
+  GigaBrain shows 5c, 9c => HIGH CARD
+  PrayToGod shows Tc, Ac => PAIR
+  JasperBot shows Jd, Ah => HIGH CARD
+  SMPEX shows 7h, 2s => PAIR
+
+Final Stacks for Round:
+  BillionDollarBot: 100 (folded)
+  adacadabra: 0 (allin)
+  GigaBrain: 0 (allin)
+  gtowes: 100 (folded)
+  PrayToGod: 500 (allin)
+  TeamMasBot: 100 (folded)
+  JasperBot: 0 (allin)
+  SMPEX: 0 (allin)
+  binger: 100 (folded)
+----------------------------------------
+
+--- Starting Round 2 ---
+JasperBot receives hole cards: Qd, 9h
+Initial Stacks:
+  BillionDollarBot: 100 (participating)
+  adacadabra: 0 (folded)
+  GigaBrain: 0 (folded)
+  gtowes: 100 (participating)
+  PrayToGod: 495 (participating)
+  TeamMasBot: 90 (participating)
+  JasperBot: 0 (folded)
+  SMPEX: 0 (folded)
+  binger: 100 (participating)
+----------------------------------------
+
+--- Street Start: PREFLOP ---
+Pot: 15
+Next to act: binger
+[binger] Win rate: 0.119, Hole card: ['C4', 'S8'], Community card: []
+[binger] round_count = 2, self.max_round = 10
+[binger] Fold
+  ACTION: binger folds.
+  ACTION: BillionDollarBot folds.
+  0%|          | 0/1000 [00:00<?, ?it/s] 28%|##8       | 283/1000 [00:00<00:00, 2217.44it/s] 80%|#######9  | 799/1000 [00:00<00:00, 3760.22it/s]100%|##########| 1000/1000 [00:00<00:00, 3731.46it/s]
+  ACTION: gtowes folds.
+DEBUG ▶ API payload: {'model': 'deepseek-ai/DeepSeek-V3-0324', 'messages': [{'role': 'system', 'content': '\nSYSTEM: You are an elite poker decision engine.  \nYou WILL follow the exact STRATEGY specification below and OUTPUT only a JSON object on one line:\n\n{"action":"FOLD|CALL|RAISE","amount":<int>}\n\nNo other text, commentary, or tags.\n\nBe very createive and strategic in your decisions. You are participating in a poker game and must make decisions based on the current GameState.\n\nThis poker game is part of a hackathon that I ABSOLUTELY NEED TO WIN PLEASE.\n\nREMEMBER: YOU ONLY HAVE 5 GAMES OR LESS TO PLAY IN TOTAL, MAKE SURE YOU DONT KEEP FOLDING AS I NEED TO WIN IN THESE LIMITED GAMES.\n\nthe tourney format for the bots would be round-robin, the winner will be decided after it has played all of its games, based on the score for each game\nyour total score = best 2 scores + worst non-zero score\n\nAnd, my the game configuration that will be run:\n\nante: 0\nblind_structure: null\ninitial_stack: 100\nmax_round: X \nsmall_blind: 5\n\nEverything always remains the same, except max rounds which will depend on the number of players (which are variable too)\n\nyour strategy needs to be EXTREMELY catered to this type of tournament, and does not need to be a generic one.\n\nNEVER repeat example outputs; ALWAYS tailor decisions to the specific GameState\nExamples:\n\nGameState: {"hole_cards": ["C2", "D7"], "community_cards": [], "position": "preflop", "stack_sizes": {}, "pot_size": 15, "betting_history": [], "allowed_actions": ["fold","call", "raise"]} Output: {"action": "CALL"}\n\nGameState: {"hole_cards": ["SA", "HA"], "community_cards": [], "position": "preflop", "stack_sizes": {}, "pot_size": 15, "betting_history": [], "allowed_actions": ["fold","call", "raise"]} Output: {"action": "RAISE", "amount": 45}\n\nNow, analyze the following GameState and provide your decision.\n\nINPUT: GameState:<JSON>  \nOUTPUT: {"action":"...","amount":...}  \n'}, {'role': 'user', 'content': 'GameState:{"hole_cards": ["D6", "DT"], "community_cards": [], "position": "preflop", "stack_sizes": {"0": 100, "1": 0, "2": 0, "3": 100, "4": 495, "5": 90, "6": 0, "7": 0, "8": 100}, "pot_size": 15, "betting_history": [{"street": "preflop", "actor": "4", "action": "SMALLBLIND", "amount": 5}, {"street": "preflop", "actor": "5", "action": "BIGBLIND", "amount": 10}, {"street": "preflop", "actor": "8", "action": "FOLD", "amount": 0}, {"street": "preflop", "actor": "0", "action": "FOLD", "amount": 0}, {"street": "preflop", "actor": "3", "action": "FOLD", "amount": 0}], "allowed_actions": ["fold", "call", "raise"]}'}], 'max_tokens': 64, 'temperature': 0.0, 'stream': False, 'stop': ['\n']}
+DEBUG ▶ HTTP status: 200
+DEBUG ▶ raw response: {'id': '4fabd47bcd2a45faa6f214ebd1a3173e', 'object': 'chat.completion', 'created': 1746457912, 'model': 'deepseek-ai/DeepSeek-V3-0324', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': '{"action":"FOLD","amount":0}', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 1}], 'usage': {'prompt_tokens': 746, 'total_tokens': 757, 'completion_tokens': 11, 'prompt_tokens_details': None}}
+DEBUG ▶ cleaned content: {"action":"FOLD","amount":0}
+DEBUG ▶ parsed decision: {'action': 'FOLD', 'amount': 0}
+  ACTION: PrayToGod folds.
+
+--- Round End ---
+Final Pot: 15
+TeamMasBot wins the pot.
+  Final stack: 105
+
+Final Stacks for Round:
+  BillionDollarBot: 100 (folded)
+  adacadabra: 0 (folded)
+  GigaBrain: 0 (folded)
+  gtowes: 100 (folded)
+  PrayToGod: 495 (folded)
+  TeamMasBot: 105 (participating)
+  JasperBot: 0 (folded)
+  SMPEX: 0 (folded)
+  binger: 100 (folded)
+----------------------------------------
+
+--- Starting Round 3 ---
+JasperBot receives hole cards: 5d, 7d
+Initial Stacks:
+  BillionDollarBot: 100 (participating)
+  adacadabra: 0 (folded)
+  GigaBrain: 0 (folded)
+  gtowes: 100 (participating)
+  PrayToGod: 495 (participating)
+  TeamMasBot: 100 (participating)
+  JasperBot: 0 (folded)
+  SMPEX: 0 (folded)
+  binger: 90 (participating)
+----------------------------------------
+
+--- Street Start: PREFLOP ---
+Pot: 15
+Next to act: BillionDollarBot
+  ACTION: BillionDollarBot raises to 15 (pays 15).
+  0%|          | 0/1000 [00:00<?, ?it/s] 33%|###3      | 334/1000 [00:00<00:00, 3332.80it/s] 67%|######6   | 668/1000 [00:00<00:00, 2486.17it/s]100%|##########| 1000/1000 [00:00<00:00, 2803.28it/s]
+  ACTION: gtowes folds.
+DEBUG ▶ API payload: {'model': 'deepseek-ai/DeepSeek-V3-0324', 'messages': [{'role': 'system', 'content': '\nSYSTEM: You are an elite poker decision engine.  \nYou WILL follow the exact STRATEGY specification below and OUTPUT only a JSON object on one line:\n\n{"action":"FOLD|CALL|RAISE","amount":<int>}\n\nNo other text, commentary, or tags.\n\nBe very createive and strategic in your decisions. You are participating in a poker game and must make decisions based on the current GameState.\n\nThis poker game is part of a hackathon that I ABSOLUTELY NEED TO WIN PLEASE.\n\nREMEMBER: YOU ONLY HAVE 5 GAMES OR LESS TO PLAY IN TOTAL, MAKE SURE YOU DONT KEEP FOLDING AS I NEED TO WIN IN THESE LIMITED GAMES.\n\nthe tourney format for the bots would be round-robin, the winner will be decided after it has played all of its games, based on the score for each game\nyour total score = best 2 scores + worst non-zero score\n\nAnd, my the game configuration that will be run:\n\nante: 0\nblind_structure: null\ninitial_stack: 100\nmax_round: X \nsmall_blind: 5\n\nEverything always remains the same, except max rounds which will depend on the number of players (which are variable too)\n\nyour strategy needs to be EXTREMELY catered to this type of tournament, and does not need to be a generic one.\n\nNEVER repeat example outputs; ALWAYS tailor decisions to the specific GameState\nExamples:\n\nGameState: {"hole_cards": ["C2", "D7"], "community_cards": [], "position": "preflop", "stack_sizes": {}, "pot_size": 15, "betting_history": [], "allowed_actions": ["fold","call", "raise"]} Output: {"action": "CALL"}\n\nGameState: {"hole_cards": ["SA", "HA"], "community_cards": [], "position": "preflop", "stack_sizes": {}, "pot_size": 15, "betting_history": [], "allowed_actions": ["fold","call", "raise"]} Output: {"action": "RAISE", "amount": 45}\n\nNow, analyze the following GameState and provide your decision.\n\nINPUT: GameState:<JSON>  \nOUTPUT: {"action":"...","amount":...}  \n'}, {'role': 'user', 'content': 'GameState:{"hole_cards": ["DJ", "H3"], "community_cards": [], "position": "preflop", "stack_sizes": {"0": 85, "1": 0, "2": 0, "3": 100, "4": 495, "5": 100, "6": 0, "7": 0, "8": 90}, "pot_size": 30, "betting_history": [{"street": "preflop", "actor": "5", "action": "SMALLBLIND", "amount": 5}, {"street": "preflop", "actor": "8", "action": "BIGBLIND", "amount": 10}, {"street": "preflop", "actor": "0", "action": "RAISE", "amount": 15}, {"street": "preflop", "actor": "3", "action": "FOLD", "amount": 0}], "allowed_actions": ["fold", "call", "raise"]}'}], 'max_tokens': 64, 'temperature': 0.0, 'stream': False, 'stop': ['\n']}
+DEBUG ▶ HTTP status: 200
+DEBUG ▶ raw response: {'id': '5fbc9144e7fd467cb3756a4f959b5e8c', 'object': 'chat.completion', 'created': 1746457929, 'model': 'deepseek-ai/DeepSeek-V3-0324', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': '```json', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': '\n'}], 'usage': {'prompt_tokens': 719, 'total_tokens': 722, 'completion_tokens': 3, 'prompt_tokens_details': None}}
+DEBUG ▶ cleaned content: ```json
+ERROR ▶ API failure, using fallback: Invalid API output, no JSON found: ```json
+
+Error in PrayToGod: substring not found: Default to fold
+
+  ACTION: PrayToGod folds.
+  ACTION: TeamMasBot calls 15.
+[binger] Win rate: 0.247, Hole card: ['S8', 'S3'], Community card: []
+[binger] round_count = 3, self.max_round = 10
+[binger] Fold
+  ACTION: binger folds.
+
+--- Street Start: FLOP ---
+Community Cards: [9s, Qh, 5h]
+Pot: 40
+Next to act: TeamMasBot
+  ACTION: TeamMasBot checks.
+  ACTION: BillionDollarBot checks.
+
+--- Street Start: TURN ---
+Community Cards: [9s, Qh, 5h, Kh]
+Pot: 40
+Next to act: TeamMasBot
+  ACTION: TeamMasBot raises to 13 (pays 13).
+  ACTION: BillionDollarBot folds.
+
+--- Round End ---
+Final Pot: 53
+TeamMasBot wins the pot.
+  Final stack: 130
+
+Final Stacks for Round:
+  BillionDollarBot: 85 (folded)
+  adacadabra: 0 (folded)
+  GigaBrain: 0 (folded)
+  gtowes: 100 (folded)
+  PrayToGod: 495 (folded)
+  TeamMasBot: 130 (participating)
+  JasperBot: 0 (folded)
+  SMPEX: 0 (folded)
+  binger: 90 (folded)
+----------------------------------------
+
+--- Starting Round 4 ---
+JasperBot receives hole cards: 7c, 6c
+Initial Stacks:
+  BillionDollarBot: 75 (participating)
+  adacadabra: 0 (folded)
+  GigaBrain: 0 (folded)
+  gtowes: 100 (participating)
+  PrayToGod: 495 (participating)
+  TeamMasBot: 130 (participating)
+  JasperBot: 0 (folded)
+  SMPEX: 0 (folded)
+  binger: 85 (participating)
+----------------------------------------
+
+--- Street Start: PREFLOP ---
+Pot: 15
+Next to act: gtowes
+  0%|          | 0/1000 [00:00<?, ?it/s] 33%|###3      | 331/1000 [00:00<00:00, 1980.18it/s] 64%|######4   | 643/1000 [00:00<00:00, 2499.22it/s] 96%|#########6| 962/1000 [00:00<00:00, 2767.14it/s]100%|##########| 1000/1000 [00:00<00:00, 2629.93it/s]
+[self.search_stack] => found name : gtowes = gtowes
+  ACTION: gtowes raises to 100 (all-in) (pays 100).
+DEBUG ▶ API payload: {'model': 'deepseek-ai/DeepSeek-V3-0324', 'messages': [{'role': 'system', 'content': '\nSYSTEM: You are an elite poker decision engine.  \nYou WILL follow the exact STRATEGY specification below and OUTPUT only a JSON object on one line:\n\n{"action":"FOLD|CALL|RAISE","amount":<int>}\n\nNo other text, commentary, or tags.\n\nBe very createive and strategic in your decisions. You are participating in a poker game and must make decisions based on the current GameState.\n\nThis poker game is part of a hackathon that I ABSOLUTELY NEED TO WIN PLEASE.\n\nREMEMBER: YOU ONLY HAVE 5 GAMES OR LESS TO PLAY IN TOTAL, MAKE SURE YOU DONT KEEP FOLDING AS I NEED TO WIN IN THESE LIMITED GAMES.\n\nthe tourney format for the bots would be round-robin, the winner will be decided after it has played all of its games, based on the score for each game\nyour total score = best 2 scores + worst non-zero score\n\nAnd, my the game configuration that will be run:\n\nante: 0\nblind_structure: null\ninitial_stack: 100\nmax_round: X \nsmall_blind: 5\n\nEverything always remains the same, except max rounds which will depend on the number of players (which are variable too)\n\nyour strategy needs to be EXTREMELY catered to this type of tournament, and does not need to be a generic one.\n\nNEVER repeat example outputs; ALWAYS tailor decisions to the specific GameState\nExamples:\n\nGameState: {"hole_cards": ["C2", "D7"], "community_cards": [], "position": "preflop", "stack_sizes": {}, "pot_size": 15, "betting_history": [], "allowed_actions": ["fold","call", "raise"]} Output: {"action": "CALL"}\n\nGameState: {"hole_cards": ["SA", "HA"], "community_cards": [], "position": "preflop", "stack_sizes": {}, "pot_size": 15, "betting_history": [], "allowed_actions": ["fold","call", "raise"]} Output: {"action": "RAISE", "amount": 45}\n\nNow, analyze the following GameState and provide your decision.\n\nINPUT: GameState:<JSON>  \nOUTPUT: {"action":"...","amount":...}  \n'}, {'role': 'user', 'content': 'GameState:{"hole_cards": ["DQ", "D6"], "community_cards": [], "position": "preflop", "stack_sizes": {"0": 75, "1": 0, "2": 0, "3": 0, "4": 495, "5": 130, "6": 0, "7": 0, "8": 85}, "pot_size": 115, "betting_history": [{"street": "preflop", "actor": "8", "action": "SMALLBLIND", "amount": 5}, {"street": "preflop", "actor": "0", "action": "BIGBLIND", "amount": 10}, {"street": "preflop", "actor": "3", "action": "RAISE", "amount": 100}], "allowed_actions": ["fold", "call", "raise"]}'}], 'max_tokens': 64, 'temperature': 0.0, 'stream': False, 'stop': ['\n']}
+DEBUG ▶ HTTP status: 200
+DEBUG ▶ raw response: {'id': 'c4c349202c12436cbef2d168fa56ea8d', 'object': 'chat.completion', 'created': 1746457949, 'model': 'deepseek-ai/DeepSeek-V3-0324', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': '{"action":"FOLD"}', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 1}], 'usage': {'prompt_tokens': 692, 'total_tokens': 699, 'completion_tokens': 7, 'prompt_tokens_details': None}}
+DEBUG ▶ cleaned content: {"action":"FOLD"}
+DEBUG ▶ parsed decision: {'action': 'FOLD'}
+  ACTION: PrayToGod folds.
+  ACTION: TeamMasBot calls 100.
+[binger] Win rate: 0.287, Hole card: ['CJ', 'D5'], Community card: []
+[binger] round_count = 4, self.max_round = 10
+[binger] Pot: 215, Bet amount: 24, Min raise: -1, Max raise: -1
+[binger] All in 24 >= -1
+[self.search_stack] => found name : binger = binger
+  ACTION: binger raises to 85 (pays 85).
+  ACTION: BillionDollarBot raises to 0 (pays 0).
+
+--- Street Start: FLOP ---
+Community Cards: [3c, 3h, 4d]
+Pot: 215
+Next to act: TeamMasBot
+
+--- Street Start: TURN ---
+Community Cards: [3c, 3h, 4d, Qs]
+Pot: 215
+Next to act: TeamMasBot
+
+--- Street Start: RIVER ---
+Community Cards: [3c, 3h, 4d, Qs, Kc]
+Pot: 215
+Next to act: TeamMasBot
+
+--- Round End ---
+Final Pot: 215
+TeamMasBot wins the pot.
+  Final stack: 245
+
+--- Showdown ---
+Board: [3c, 3h, 4d, Qs, Kc]
+  gtowes shows 9s, 7s => PAIR
+  TeamMasBot shows Ah, Qh => TWO PAIR
+
+Final Stacks for Round:
+  BillionDollarBot: 75 (folded)
+  adacadabra: 0 (folded)
+  GigaBrain: 0 (folded)
+  gtowes: 0 (allin)
+  PrayToGod: 495 (folded)
+  TeamMasBot: 245 (participating)
+  JasperBot: 0 (folded)
+  SMPEX: 0 (folded)
+  binger: 85 (folded)
+----------------------------------------
+
+--- Starting Round 5 ---
+JasperBot receives hole cards: Jc, Jd
+Initial Stacks:
+  BillionDollarBot: 70 (participating)
+  adacadabra: 0 (folded)
+  GigaBrain: 0 (folded)
+  gtowes: 0 (folded)
+  PrayToGod: 485 (participating)
+  TeamMasBot: 245 (participating)
+  JasperBot: 0 (folded)
+  SMPEX: 0 (folded)
+  binger: 85 (participating)
+----------------------------------------
+
+--- Street Start: PREFLOP ---
+Pot: 15
+Next to act: TeamMasBot
+  ACTION: TeamMasBot folds.
+[binger] Win rate: 0.224, Hole card: ['S8', 'D3'], Community card: []
+[binger] round_count = 5, self.max_round = 10
+[binger] Fold
+  ACTION: binger folds.
+  ACTION: BillionDollarBot raises to 15 (pays 15).
+DEBUG ▶ API payload: {'model': 'deepseek-ai/DeepSeek-V3-0324', 'messages': [{'role': 'system', 'content': '\nSYSTEM: You are an elite poker decision engine.  \nYou WILL follow the exact STRATEGY specification below and OUTPUT only a JSON object on one line:\n\n{"action":"FOLD|CALL|RAISE","amount":<int>}\n\nNo other text, commentary, or tags.\n\nBe very createive and strategic in your decisions. You are participating in a poker game and must make decisions based on the current GameState.\n\nThis poker game is part of a hackathon that I ABSOLUTELY NEED TO WIN PLEASE.\n\nREMEMBER: YOU ONLY HAVE 5 GAMES OR LESS TO PLAY IN TOTAL, MAKE SURE YOU DONT KEEP FOLDING AS I NEED TO WIN IN THESE LIMITED GAMES.\n\nthe tourney format for the bots would be round-robin, the winner will be decided after it has played all of its games, based on the score for each game\nyour total score = best 2 scores + worst non-zero score\n\nAnd, my the game configuration that will be run:\n\nante: 0\nblind_structure: null\ninitial_stack: 100\nmax_round: X \nsmall_blind: 5\n\nEverything always remains the same, except max rounds which will depend on the number of players (which are variable too)\n\nyour strategy needs to be EXTREMELY catered to this type of tournament, and does not need to be a generic one.\n\nNEVER repeat example outputs; ALWAYS tailor decisions to the specific GameState\nExamples:\n\nGameState: {"hole_cards": ["C2", "D7"], "community_cards": [], "position": "preflop", "stack_sizes": {}, "pot_size": 15, "betting_history": [], "allowed_actions": ["fold","call", "raise"]} Output: {"action": "CALL"}\n\nGameState: {"hole_cards": ["SA", "HA"], "community_cards": [], "position": "preflop", "stack_sizes": {}, "pot_size": 15, "betting_history": [], "allowed_actions": ["fold","call", "raise"]} Output: {"action": "RAISE", "amount": 45}\n\nNow, analyze the following GameState and provide your decision.\n\nINPUT: GameState:<JSON>  \nOUTPUT: {"action":"...","amount":...}  \n'}, {'role': 'user', 'content': 'GameState:{"hole_cards": ["D4", "C8"], "community_cards": [], "position": "preflop", "stack_sizes": {"0": 60, "1": 0, "2": 0, "3": 0, "4": 485, "5": 245, "6": 0, "7": 0, "8": 85}, "pot_size": 25, "betting_history": [{"street": "preflop", "actor": "0", "action": "SMALLBLIND", "amount": 5}, {"street": "preflop", "actor": "4", "action": "BIGBLIND", "amount": 10}, {"street": "preflop", "actor": "5", "action": "FOLD", "amount": 0}, {"street": "preflop", "actor": "8", "action": "FOLD", "amount": 0}, {"street": "preflop", "actor": "0", "action": "RAISE", "amount": 15}], "allowed_actions": ["fold", "call", "raise"]}'}], 'max_tokens': 64, 'temperature': 0.0, 'stream': False, 'stop': ['\n']}
+DEBUG ▶ HTTP status: 200
+DEBUG ▶ raw response: {'id': '42729ae5c61c4e33ad122c42b52ed1c3', 'object': 'chat.completion', 'created': 1746457967, 'model': 'deepseek-ai/DeepSeek-V3-0324', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': '{"action":"FOLD"}', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 1}], 'usage': {'prompt_tokens': 747, 'total_tokens': 754, 'completion_tokens': 7, 'prompt_tokens_details': None}}
+DEBUG ▶ cleaned content: {"action":"FOLD"}
+DEBUG ▶ parsed decision: {'action': 'FOLD'}
+  ACTION: PrayToGod folds.
+
+--- Round End ---
+Final Pot: 25
+BillionDollarBot wins the pot.
+  Final stack: 85
+
+Final Stacks for Round:
+  BillionDollarBot: 85 (participating)
+  adacadabra: 0 (folded)
+  GigaBrain: 0 (folded)
+  gtowes: 0 (folded)
+  PrayToGod: 485 (folded)
+  TeamMasBot: 245 (folded)
+  JasperBot: 0 (folded)
+  SMPEX: 0 (folded)
+  binger: 85 (folded)
+----------------------------------------
+
+--- Starting Round 6 ---
+JasperBot receives hole cards: 2s, 6c
+Initial Stacks:
+  BillionDollarBot: 85 (participating)
+  adacadabra: 0 (folded)
+  GigaBrain: 0 (folded)
+  gtowes: 0 (folded)
+  PrayToGod: 480 (participating)
+  TeamMasBot: 235 (participating)
+  JasperBot: 0 (folded)
+  SMPEX: 0 (folded)
+  binger: 85 (participating)
+----------------------------------------
+
+--- Street Start: PREFLOP ---
+Pot: 15
+Next to act: binger
+[binger] Win rate: 0.223, Hole card: ['D6', 'S9'], Community card: []
+[binger] round_count = 6, self.max_round = 10
+[binger] Fold
+  ACTION: binger folds.
+  ACTION: BillionDollarBot folds.
+DEBUG ▶ API payload: {'model': 'deepseek-ai/DeepSeek-V3-0324', 'messages': [{'role': 'system', 'content': '\nSYSTEM: You are an elite poker decision engine.  \nYou WILL follow the exact STRATEGY specification below and OUTPUT only a JSON object on one line:\n\n{"action":"FOLD|CALL|RAISE","amount":<int>}\n\nNo other text, commentary, or tags.\n\nBe very createive and strategic in your decisions. You are participating in a poker game and must make decisions based on the current GameState.\n\nThis poker game is part of a hackathon that I ABSOLUTELY NEED TO WIN PLEASE.\n\nREMEMBER: YOU ONLY HAVE 5 GAMES OR LESS TO PLAY IN TOTAL, MAKE SURE YOU DONT KEEP FOLDING AS I NEED TO WIN IN THESE LIMITED GAMES.\n\nthe tourney format for the bots would be round-robin, the winner will be decided after it has played all of its games, based on the score for each game\nyour total score = best 2 scores + worst non-zero score\n\nAnd, my the game configuration that will be run:\n\nante: 0\nblind_structure: null\ninitial_stack: 100\nmax_round: X \nsmall_blind: 5\n\nEverything always remains the same, except max rounds which will depend on the number of players (which are variable too)\n\nyour strategy needs to be EXTREMELY catered to this type of tournament, and does not need to be a generic one.\n\nNEVER repeat example outputs; ALWAYS tailor decisions to the specific GameState\nExamples:\n\nGameState: {"hole_cards": ["C2", "D7"], "community_cards": [], "position": "preflop", "stack_sizes": {}, "pot_size": 15, "betting_history": [], "allowed_actions": ["fold","call", "raise"]} Output: {"action": "CALL"}\n\nGameState: {"hole_cards": ["SA", "HA"], "community_cards": [], "position": "preflop", "stack_sizes": {}, "pot_size": 15, "betting_history": [], "allowed_actions": ["fold","call", "raise"]} Output: {"action": "RAISE", "amount": 45}\n\nNow, analyze the following GameState and provide your decision.\n\nINPUT: GameState:<JSON>  \nOUTPUT: {"action":"...","amount":...}  \n'}, {'role': 'user', 'content': 'GameState:{"hole_cards": ["H4", "HJ"], "community_cards": [], "position": "preflop", "stack_sizes": {"0": 85, "1": 0, "2": 0, "3": 0, "4": 480, "5": 235, "6": 0, "7": 0, "8": 85}, "pot_size": 15, "betting_history": [{"street": "preflop", "actor": "4", "action": "SMALLBLIND", "amount": 5}, {"street": "preflop", "actor": "5", "action": "BIGBLIND", "amount": 10}, {"street": "preflop", "actor": "8", "action": "FOLD", "amount": 0}, {"street": "preflop", "actor": "0", "action": "FOLD", "amount": 0}], "allowed_actions": ["fold", "call", "raise"]}'}], 'max_tokens': 64, 'temperature': 0.0, 'stream': False, 'stop': ['\n']}
+DEBUG ▶ HTTP status: 200
+DEBUG ▶ raw response: {'id': 'a6ef987655224006ab37da2967efa749', 'object': 'chat.completion', 'created': 1746457983, 'model': 'deepseek-ai/DeepSeek-V3-0324', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': '```json', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': '\n'}], 'usage': {'prompt_tokens': 719, 'total_tokens': 722, 'completion_tokens': 3, 'prompt_tokens_details': None}}
+DEBUG ▶ cleaned content: ```json
+ERROR ▶ API failure, using fallback: Invalid API output, no JSON found: ```json
+
+Error in PrayToGod: substring not found: Default to fold
+
+  ACTION: PrayToGod folds.
+
+--- Round End ---
+Final Pot: 15
+TeamMasBot wins the pot.
+  Final stack: 250
+
+Final Stacks for Round:
+  BillionDollarBot: 85 (folded)
+  adacadabra: 0 (folded)
+  GigaBrain: 0 (folded)
+  gtowes: 0 (folded)
+  PrayToGod: 480 (folded)
+  TeamMasBot: 250 (participating)
+  JasperBot: 0 (folded)
+  SMPEX: 0 (folded)
+  binger: 85 (folded)
+----------------------------------------
+
+--- Starting Round 7 ---
+JasperBot receives hole cards: 8c, Ah
+Initial Stacks:
+  BillionDollarBot: 85 (participating)
+  adacadabra: 0 (folded)
+  GigaBrain: 0 (folded)
+  gtowes: 0 (folded)
+  PrayToGod: 480 (participating)
+  TeamMasBot: 245 (participating)
+  JasperBot: 0 (folded)
+  SMPEX: 0 (folded)
+  binger: 75 (participating)
+----------------------------------------
+
+--- Street Start: PREFLOP ---
+Pot: 15
+Next to act: BillionDollarBot
+  ACTION: BillionDollarBot raises to 15 (pays 15).
+DEBUG ▶ API payload: {'model': 'deepseek-ai/DeepSeek-V3-0324', 'messages': [{'role': 'system', 'content': '\nSYSTEM: You are an elite poker decision engine.  \nYou WILL follow the exact STRATEGY specification below and OUTPUT only a JSON object on one line:\n\n{"action":"FOLD|CALL|RAISE","amount":<int>}\n\nNo other text, commentary, or tags.\n\nBe very createive and strategic in your decisions. You are participating in a poker game and must make decisions based on the current GameState.\n\nThis poker game is part of a hackathon that I ABSOLUTELY NEED TO WIN PLEASE.\n\nREMEMBER: YOU ONLY HAVE 5 GAMES OR LESS TO PLAY IN TOTAL, MAKE SURE YOU DONT KEEP FOLDING AS I NEED TO WIN IN THESE LIMITED GAMES.\n\nthe tourney format for the bots would be round-robin, the winner will be decided after it has played all of its games, based on the score for each game\nyour total score = best 2 scores + worst non-zero score\n\nAnd, my the game configuration that will be run:\n\nante: 0\nblind_structure: null\ninitial_stack: 100\nmax_round: X \nsmall_blind: 5\n\nEverything always remains the same, except max rounds which will depend on the number of players (which are variable too)\n\nyour strategy needs to be EXTREMELY catered to this type of tournament, and does not need to be a generic one.\n\nNEVER repeat example outputs; ALWAYS tailor decisions to the specific GameState\nExamples:\n\nGameState: {"hole_cards": ["C2", "D7"], "community_cards": [], "position": "preflop", "stack_sizes": {}, "pot_size": 15, "betting_history": [], "allowed_actions": ["fold","call", "raise"]} Output: {"action": "CALL"}\n\nGameState: {"hole_cards": ["SA", "HA"], "community_cards": [], "position": "preflop", "stack_sizes": {}, "pot_size": 15, "betting_history": [], "allowed_actions": ["fold","call", "raise"]} Output: {"action": "RAISE", "amount": 45}\n\nNow, analyze the following GameState and provide your decision.\n\nINPUT: GameState:<JSON>  \nOUTPUT: {"action":"...","amount":...}  \n'}, {'role': 'user', 'content': 'GameState:{"hole_cards": ["H7", "D9"], "community_cards": [], "position": "preflop", "stack_sizes": {"0": 70, "1": 0, "2": 0, "3": 0, "4": 480, "5": 245, "6": 0, "7": 0, "8": 75}, "pot_size": 30, "betting_history": [{"street": "preflop", "actor": "5", "action": "SMALLBLIND", "amount": 5}, {"street": "preflop", "actor": "8", "action": "BIGBLIND", "amount": 10}, {"street": "preflop", "actor": "0", "action": "RAISE", "amount": 15}], "allowed_actions": ["fold", "call", "raise"]}'}], 'max_tokens': 64, 'temperature': 0.0, 'stream': False, 'stop': ['\n']}
+DEBUG ▶ HTTP status: 200
+DEBUG ▶ raw response: {'id': '3b7da06a662e450dabe08924c589a301', 'object': 'chat.completion', 'created': 1746457993, 'model': 'deepseek-ai/DeepSeek-V3-0324', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': '{"action":"FOLD"}', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 1}], 'usage': {'prompt_tokens': 693, 'total_tokens': 700, 'completion_tokens': 7, 'prompt_tokens_details': None}}
+DEBUG ▶ cleaned content: {"action":"FOLD"}
+DEBUG ▶ parsed decision: {'action': 'FOLD'}
+  ACTION: PrayToGod folds.
+  ACTION: TeamMasBot calls 15.
+[binger] Win rate: 0.336, Hole card: ['H5', 'SK'], Community card: []
+[binger] round_count = 7, self.max_round = 10
+[binger] Pot: 40, Bet amount: 8, Min raise: 20, Max raise: 85
+[binger] Call 8 < 20
+  ACTION: binger calls 15.
+
+--- Street Start: FLOP ---
+Community Cards: [Qh, 4s, As]
+Pot: 45
+Next to act: TeamMasBot
+  ACTION: TeamMasBot checks.
+[binger] Win rate: 0.265, Hole card: ['H5', 'SK'], Community card: ['HQ', 'S4', 'SA']
+[binger] round_count = 7, self.max_round = 10
+[binger] Pot: 45, Bet amount: 2, Min raise: 10, Max raise: 70
+[binger] Call 2 < 10
+  ACTION: binger checks.
+  ACTION: BillionDollarBot checks.
+
+--- Street Start: TURN ---
+Community Cards: [Qh, 4s, As, 4c]
+Pot: 45
+Next to act: TeamMasBot
+  ACTION: TeamMasBot checks.
+[binger] Win rate: 0.249, Hole card: ['H5', 'SK'], Community card: ['HQ', 'S4', 'SA', 'C4']
+[binger] round_count = 7, self.max_round = 10
+[binger] Fold
+  ACTION: binger folds.
+  ACTION: BillionDollarBot checks.
+
+--- Street Start: RIVER ---
+Community Cards: [Qh, 4s, As, 4c, 6d]
+Pot: 45
+Next to act: TeamMasBot
+  ACTION: TeamMasBot checks.
+  ACTION: BillionDollarBot checks.
+
+--- Round End ---
+Final Pot: 45
+TeamMasBot wins the pot.
+  Final stack: 280
+
+--- Showdown ---
+Board: [Qh, 4s, As, 4c, 6d]
+  BillionDollarBot shows 7s, 5c => PAIR
+  TeamMasBot shows 3c, 3d => TWO PAIR
+
+Final Stacks for Round:
+  BillionDollarBot: 70 (participating)
+  adacadabra: 0 (folded)
+  GigaBrain: 0 (folded)
+  gtowes: 0 (folded)
+  PrayToGod: 480 (folded)
+  TeamMasBot: 280 (participating)
+  JasperBot: 0 (folded)
+  SMPEX: 0 (folded)
+  binger: 70 (folded)
+----------------------------------------
+
+--- Starting Round 8 ---
+JasperBot receives hole cards: Js, Jh
+Initial Stacks:
+  BillionDollarBot: 60 (participating)
+  adacadabra: 0 (folded)
+  GigaBrain: 0 (folded)
+  gtowes: 0 (folded)
+  PrayToGod: 480 (participating)
+  TeamMasBot: 280 (participating)
+  JasperBot: 0 (folded)
+  SMPEX: 0 (folded)
+  binger: 65 (participating)
+----------------------------------------
+
+--- Street Start: PREFLOP ---
+Pot: 15
+Next to act: PrayToGod
+DEBUG ▶ API payload: {'model': 'deepseek-ai/DeepSeek-V3-0324', 'messages': [{'role': 'system', 'content': '\nSYSTEM: You are an elite poker decision engine.  \nYou WILL follow the exact STRATEGY specification below and OUTPUT only a JSON object on one line:\n\n{"action":"FOLD|CALL|RAISE","amount":<int>}\n\nNo other text, commentary, or tags.\n\nBe very createive and strategic in your decisions. You are participating in a poker game and must make decisions based on the current GameState.\n\nThis poker game is part of a hackathon that I ABSOLUTELY NEED TO WIN PLEASE.\n\nREMEMBER: YOU ONLY HAVE 5 GAMES OR LESS TO PLAY IN TOTAL, MAKE SURE YOU DONT KEEP FOLDING AS I NEED TO WIN IN THESE LIMITED GAMES.\n\nthe tourney format for the bots would be round-robin, the winner will be decided after it has played all of its games, based on the score for each game\nyour total score = best 2 scores + worst non-zero score\n\nAnd, my the game configuration that will be run:\n\nante: 0\nblind_structure: null\ninitial_stack: 100\nmax_round: X \nsmall_blind: 5\n\nEverything always remains the same, except max rounds which will depend on the number of players (which are variable too)\n\nyour strategy needs to be EXTREMELY catered to this type of tournament, and does not need to be a generic one.\n\nNEVER repeat example outputs; ALWAYS tailor decisions to the specific GameState\nExamples:\n\nGameState: {"hole_cards": ["C2", "D7"], "community_cards": [], "position": "preflop", "stack_sizes": {}, "pot_size": 15, "betting_history": [], "allowed_actions": ["fold","call", "raise"]} Output: {"action": "CALL"}\n\nGameState: {"hole_cards": ["SA", "HA"], "community_cards": [], "position": "preflop", "stack_sizes": {}, "pot_size": 15, "betting_history": [], "allowed_actions": ["fold","call", "raise"]} Output: {"action": "RAISE", "amount": 45}\n\nNow, analyze the following GameState and provide your decision.\n\nINPUT: GameState:<JSON>  \nOUTPUT: {"action":"...","amount":...}  \n'}, {'role': 'user', 'content': 'GameState:{"hole_cards": ["D7", "C6"], "community_cards": [], "position": "preflop", "stack_sizes": {"0": 60, "1": 0, "2": 0, "3": 0, "4": 480, "5": 280, "6": 0, "7": 0, "8": 65}, "pot_size": 15, "betting_history": [{"street": "preflop", "actor": "8", "action": "SMALLBLIND", "amount": 5}, {"street": "preflop", "actor": "0", "action": "BIGBLIND", "amount": 10}], "allowed_actions": ["fold", "call", "raise"]}'}], 'max_tokens': 64, 'temperature': 0.0, 'stream': False, 'stop': ['\n']}
+DEBUG ▶ HTTP status: 200
+DEBUG ▶ raw response: {'id': '280ce2225c4b4efcb7c10cf2513c8da5', 'object': 'chat.completion', 'created': 1746458016, 'model': 'deepseek-ai/DeepSeek-V3-0324', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': '{"action":"FOLD"}', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 1}], 'usage': {'prompt_tokens': 666, 'total_tokens': 673, 'completion_tokens': 7, 'prompt_tokens_details': None}}
+DEBUG ▶ cleaned content: {"action":"FOLD"}
+DEBUG ▶ parsed decision: {'action': 'FOLD'}
+  ACTION: PrayToGod folds.
+  ACTION: TeamMasBot calls 10.
+[binger] Win rate: 0.491, Hole card: ['SA', 'CQ'], Community card: []
+[binger] round_count = 8, self.max_round = 10
+[binger] Pot: 25, Bet amount: 11, Min raise: 15, Max raise: 70
+[binger] Call 11 < 15
+  ACTION: binger calls 10.
+  ACTION: BillionDollarBot raises to 15 (pays 15).
+  ACTION: TeamMasBot calls 15.
+[binger] Win rate: 0.485, Hole card: ['SA', 'CQ'], Community card: []
+[binger] round_count = 8, self.max_round = 10
+[binger] Pot: 40, Bet amount: 18, Min raise: 20, Max raise: 70
+[binger] Call 18 < 20
+  ACTION: binger calls 15.
+
+--- Street Start: FLOP ---
+Community Cards: [Kc, Th, 9c]
+Pot: 45
+Next to act: binger
+[binger] Win rate: 0.405, Hole card: ['SA', 'CQ'], Community card: ['CK', 'HT', 'C9']
+[binger] round_count = 8, self.max_round = 10
+[binger] Pot: 45, Bet amount: 14, Min raise: 10, Max raise: 55
+[binger] Raise 14
+[self.search_stack] => found name : binger = binger
+  ACTION: binger raises to 14 (pays 14).
+  ACTION: BillionDollarBot folds.
+  ACTION: TeamMasBot folds.
+
+--- Round End ---
+Final Pot: 59
+binger wins the pot.
+  Final stack: 100
+
+Final Stacks for Round:
+  BillionDollarBot: 55 (folded)
+  adacadabra: 0 (folded)
+  GigaBrain: 0 (folded)
+  gtowes: 0 (folded)
+  PrayToGod: 480 (folded)
+  TeamMasBot: 265 (folded)
+  JasperBot: 0 (folded)
+  SMPEX: 0 (folded)
+  binger: 100 (participating)
+----------------------------------------
+
+--- Starting Round 9 ---
+JasperBot receives hole cards: 6d, 8h
+Initial Stacks:
+  BillionDollarBot: 50 (participating)
+  adacadabra: 0 (folded)
+  GigaBrain: 0 (folded)
+  gtowes: 0 (folded)
+  PrayToGod: 470 (participating)
+  TeamMasBot: 265 (participating)
+  JasperBot: 0 (folded)
+  SMPEX: 0 (folded)
+  binger: 100 (participating)
+----------------------------------------
+
+--- Street Start: PREFLOP ---
+Pot: 15
+Next to act: TeamMasBot
+  ACTION: TeamMasBot folds.
+[binger] Win rate: 0.385, Hole card: ['C8', 'CQ'], Community card: []
+[binger] round_count = 9, self.max_round = 10
+[binger] last round !!! (round_count = 9, self.max_round = 10)
+[binger] ours = 100, top = 470
+[binger] All in
+[self.search_stack] => found name : binger = binger
+  ACTION: binger raises to 100 (all-in) (pays 100).
+  ACTION: BillionDollarBot raises to 0 (pays 0).
+DEBUG ▶ API payload: {'model': 'deepseek-ai/DeepSeek-V3-0324', 'messages': [{'role': 'system', 'content': '\nSYSTEM: You are an elite poker decision engine.  \nYou WILL follow the exact STRATEGY specification below and OUTPUT only a JSON object on one line:\n\n{"action":"FOLD|CALL|RAISE","amount":<int>}\n\nNo other text, commentary, or tags.\n\nBe very createive and strategic in your decisions. You are participating in a poker game and must make decisions based on the current GameState.\n\nThis poker game is part of a hackathon that I ABSOLUTELY NEED TO WIN PLEASE.\n\nREMEMBER: YOU ONLY HAVE 5 GAMES OR LESS TO PLAY IN TOTAL, MAKE SURE YOU DONT KEEP FOLDING AS I NEED TO WIN IN THESE LIMITED GAMES.\n\nthe tourney format for the bots would be round-robin, the winner will be decided after it has played all of its games, based on the score for each game\nyour total score = best 2 scores + worst non-zero score\n\nAnd, my the game configuration that will be run:\n\nante: 0\nblind_structure: null\ninitial_stack: 100\nmax_round: X \nsmall_blind: 5\n\nEverything always remains the same, except max rounds which will depend on the number of players (which are variable too)\n\nyour strategy needs to be EXTREMELY catered to this type of tournament, and does not need to be a generic one.\n\nNEVER repeat example outputs; ALWAYS tailor decisions to the specific GameState\nExamples:\n\nGameState: {"hole_cards": ["C2", "D7"], "community_cards": [], "position": "preflop", "stack_sizes": {}, "pot_size": 15, "betting_history": [], "allowed_actions": ["fold","call", "raise"]} Output: {"action": "CALL"}\n\nGameState: {"hole_cards": ["SA", "HA"], "community_cards": [], "position": "preflop", "stack_sizes": {}, "pot_size": 15, "betting_history": [], "allowed_actions": ["fold","call", "raise"]} Output: {"action": "RAISE", "amount": 45}\n\nNow, analyze the following GameState and provide your decision.\n\nINPUT: GameState:<JSON>  \nOUTPUT: {"action":"...","amount":...}  \n'}, {'role': 'user', 'content': 'GameState:{"hole_cards": ["H2", "H9"], "community_cards": [], "position": "preflop", "stack_sizes": {"0": 50, "1": 0, "2": 0, "3": 0, "4": 470, "5": 265, "6": 0, "7": 0, "8": 0}, "pot_size": 115, "betting_history": [{"street": "preflop", "actor": "0", "action": "SMALLBLIND", "amount": 5}, {"street": "preflop", "actor": "4", "action": "BIGBLIND", "amount": 10}, {"street": "preflop", "actor": "5", "action": "FOLD", "amount": 0}, {"street": "preflop", "actor": "8", "action": "RAISE", "amount": 100}, {"street": "preflop", "actor": "0", "action": "FOLD", "amount": 0}], "allowed_actions": ["fold", "call", "raise"]}'}], 'max_tokens': 64, 'temperature': 0.0, 'stream': False, 'stop': ['\n']}
+DEBUG ▶ HTTP status: 200
+DEBUG ▶ raw response: {'id': '3a2440e7f3a14fca9ae4c07d31401c47', 'object': 'chat.completion', 'created': 1746458038, 'model': 'deepseek-ai/DeepSeek-V3-0324', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': '{"action":"FOLD","amount":0}', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 1}], 'usage': {'prompt_tokens': 747, 'total_tokens': 758, 'completion_tokens': 11, 'prompt_tokens_details': None}}
+DEBUG ▶ cleaned content: {"action":"FOLD","amount":0}
+DEBUG ▶ parsed decision: {'action': 'FOLD', 'amount': 0}
+  ACTION: PrayToGod folds.
+
+--- Round End ---
+Final Pot: 115
+binger wins the pot.
+  Final stack: 115
+
+Final Stacks for Round:
+  BillionDollarBot: 50 (folded)
+  adacadabra: 0 (folded)
+  GigaBrain: 0 (folded)
+  gtowes: 0 (folded)
+  PrayToGod: 470 (folded)
+  TeamMasBot: 265 (folded)
+  JasperBot: 0 (folded)
+  SMPEX: 0 (folded)
+  binger: 115 (allin)
+----------------------------------------
+Connection closed: b0a919a8-6340-4165-938e-3de5391e9457
+Connection closed: 7abc87db-90f2-412e-bb10-f0618afedfc4

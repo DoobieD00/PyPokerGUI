@@ -1,0 +1,20 @@
+game-9.yaml
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Kenneth\OneDrive\Documents\GitHub\PyPokerGUI\pypokergui\__main__.py", line 63, in <module>
+    main()
+  File "C:\Users\Kenneth\OneDrive\Documents\GitHub\PyPokerGUI\pypokergui\__main__.py", line 55, in main
+    serve(args.config, args.port, args.speed)
+  File "C:\Users\Kenneth\OneDrive\Documents\GitHub\PyPokerGUI\pypokergui\__main__.py", line 33, in serve
+    start_server(config_path, port, speed)
+  File "C:\Users\Kenneth\OneDrive\Documents\GitHub\PyPokerGUI\pypokergui\server\poker.py", line 151, in start_server
+    app.listen(port)
+  File "C:\Users\Kenneth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\tornado\web.py", line 2211, in listen
+    server.listen(
+  File "C:\Users\Kenneth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\tornado\tcpserver.py", line 183, in listen
+    sockets = bind_sockets(
+              ^^^^^^^^^^^^^
+  File "C:\Users\Kenneth\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\tornado\netutil.py", line 162, in bind_sockets
+    sock.bind(sockaddr)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
