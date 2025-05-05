@@ -1,0 +1,100 @@
+game-9.yaml
+health check succeeded for script of [ submission/pokermon.py ]
+health check succeeded for script of [ submission/billiondollarbot.py ]
+health check succeeded for script of [ submission/nobot.py ]
+health check succeeded for script of [ submission/binger.py ]
+health check succeeded for script of [ submission/dhruv-team/DhruvBot.py ]
+health check succeeded for script of [ submission/gto3.py ]
+health check succeeded for script of [ submission/waterbottle.py ]
+health check succeeded for script of [ submission/pray.py ]
+[binger] Win rate: 0.057, Hole card: ['H4', 'S2'], Community card: []
+[binger] round_count = 1, self.max_round = 10
+[binger] Fold
+[self.search_stack] => found name : DhruvBot = DhruvBot
+DEBUG ▶ API payload: {'model': 'deepseek-ai/DeepSeek-V3-0324', 'messages': [{'role': 'system', 'content': '\nSYSTEM: You are an elite poker decision engine.  \nYou WILL follow the exact STRATEGY specification below and OUTPUT only a JSON object on one line:\n\n{"action":"FOLD|CALL|RAISE","amount":<int>}\n\nNo other text, commentary, or tags.\n\nBe very createive and strategic in your decisions. You are participating in a poker game and must make decisions based on the current GameState.\n\nThis poker game is part of a hackathon that I ABSOLUTELY NEED TO WIN PLEASE.\n\nREMEMBER: YOU ONLY HAVE 5 GAMES OR LESS TO PLAY IN TOTAL, MAKE SURE YOU DONT KEEP FOLDING AS I NEED TO WIN IN THESE LIMITED GAMES.\n\nthe tourney format for the bots would be round-robin, the winner will be decided after it has played all of its games, based on the score for each game\nyour total score = best 2 scores + worst non-zero score\n\nAnd, my the game configuration that will be run:\n\nante: 0\nblind_structure: null\ninitial_stack: 100\nmax_round: X \nsmall_blind: 5\n\nEverything always remains the same, except max rounds which will depend on the number of players (which are variable too)\n\nyour strategy needs to be EXTREMELY catered to this type of tournament, and does not need to be a generic one.\n\nNEVER repeat example outputs; ALWAYS tailor decisions to the specific GameState\nExamples:\n\nGameState: {"hole_cards": ["C2", "D7"], "community_cards": [], "position": "preflop", "stack_sizes": {}, "pot_size": 15, "betting_history": [], "allowed_actions": ["fold","call", "raise"]} Output: {"action": "CALL"}\n\nGameState: {"hole_cards": ["SA", "HA"], "community_cards": [], "position": "preflop", "stack_sizes": {}, "pot_size": 15, "betting_history": [], "allowed_actions": ["fold","call", "raise"]} Output: {"action": "RAISE", "amount": 45}\n\nNow, analyze the following GameState and provide your decision.\n\nINPUT: GameState:<JSON>  \nOUTPUT: {"action":"...","amount":...}  \n'}, {'role': 'user', 'content': 'GameState:{"hole_cards": ["S9", "SA"], "community_cards": [], "position": "preflop", "stack_sizes": {"0": 100, "1": 95, "2": 90, "3": 100, "4": 0, "5": 0, "6": 100, "7": 100}, "pot_size": 215, "betting_history": [{"street": "preflop", "actor": "1", "action": "SMALLBLIND", "amount": 5}, {"street": "preflop", "actor": "2", "action": "BIGBLIND", "amount": 10}, {"street": "preflop", "actor": "3", "action": "FOLD", "amount": 0}, {"street": "preflop", "actor": "4", "action": "RAISE", "amount": 100}, {"street": "preflop", "actor": "5", "action": "CALL", "amount": 100}, {"street": "preflop", "actor": "6", "action": "FOLD", "amount": 0}], "allowed_actions": ["fold", "call", "raise"]}'}], 'max_tokens': 64, 'temperature': 0.0, 'stream': False, 'stop': ['\n']}
+DEBUG ▶ HTTP status: 200
+DEBUG ▶ raw response: {'id': '383e6c87c4824ee7aad3aa2266487cbc', 'object': 'chat.completion', 'created': 1746458435, 'model': 'deepseek-ai/DeepSeek-V3-0324', 'choices': [{'index': 0, 'message': {'role': 'assistant', 'content': '{"action":"CALL","amount":100}', 'reasoning_content': None, 'tool_calls': None}, 'logprobs': None, 'finish_reason': 'stop', 'matched_stop': 1}], 'usage': {'prompt_tokens': 767, 'total_tokens': 778, 'completion_tokens': 11, 'prompt_tokens_details': None}}
+DEBUG ▶ cleaned content: {"action":"CALL","amount":100}
+DEBUG ▶ parsed decision: {'action': 'CALL', 'amount': 100}
+[self.search_stack] => found name : gto3 = gto3
+[self.search_stack] => found name : pokermon = pokermon
+[binger] Win rate: 0.489, Hole card: ['HA', 'CJ'], Community card: []
+[binger] round_count = 2, self.max_round = 10
+[binger] Pot: 250, Bet amount: 113, Min raise: -1, Max raise: -1
+[binger] All in 113 >= -1
+[self.search_stack] => found name : binger = binger
+[binger] Win rate: 0.295, Hole card: ['CQ', 'S9'], Community card: []
+[binger] round_count = 3, self.max_round = 10
+[binger] Pot: 30, Bet amount: 3, Min raise: 20, Max raise: 90
+[binger] Call 3 < 20
+[self.search_stack] => found name : pokermon = pokermon
+[binger] Win rate: 0.577, Hole card: ['CQ', 'S9'], Community card: ['C4', 'C6', 'D9']
+[binger] round_count = 3, self.max_round = 10
+[binger] Pot: 80, Bet amount: 46, Min raise: 40, Max raise: 75
+[binger] Raise 46
+[self.search_stack] => found name : binger = binger
+[self.search_stack] => found name : pokermon = pokermon
+[binger] Win rate: 0.616, Hole card: ['CQ', 'S9'], Community card: ['C4', 'C6', 'D9']
+[binger] round_count = 3, self.max_round = 10
+[binger] Pot: 296, Bet amount: 185, Min raise: -1, Max raise: -1
+[binger] All in 185 >= -1
+[self.search_stack] => found name : binger = binger
+[self.search_stack] => found name : pokermon = pokermon
+[self.search_stack] => found name : pokermon = pokermon
+[binger] Win rate: 0.297, Hole card: ['C9', 'C7'], Community card: []
+[binger] round_count = 4, self.max_round = 10
+[binger] Pot: 15, Bet amount: 2, Min raise: 15, Max raise: 29
+[binger] Call 2 < 15
+[binger] Win rate: 0.344, Hole card: ['C9', 'C7'], Community card: []
+[binger] round_count = 4, self.max_round = 10
+[binger] Pot: 35, Bet amount: 7, Min raise: 20, Max raise: 29
+[binger] Call 7 < 20
+[binger] Win rate: 0.463, Hole card: ['C9', 'C7'], Community card: ['H5', 'S7', 'SJ']
+[binger] round_count = 4, self.max_round = 10
+[binger] Pot: 45, Bet amount: 18, Min raise: 10, Max raise: 14
+[binger] All in 18 >= 14
+[self.search_stack] => found name : binger = binger
+[self.search_stack] => found name : gto3 = gto3
+[binger] Win rate: 0.121, Hole card: ['D2', 'S3'], Community card: []
+[binger] round_count = 5, self.max_round = 10
+[binger] Fold
+[self.search_stack] => found name : gto3 = gto3
+[binger] Win rate: 0.47, Hole card: ['SK', 'CQ'], Community card: []
+[binger] round_count = 6, self.max_round = 10
+[binger] Pot: 25, Bet amount: 10, Min raise: 15, Max raise: 63
+[binger] Call 10 < 15
+[binger] Win rate: 0.694, Hole card: ['SK', 'CQ'], Community card: ['HJ', 'HQ', 'CT']
+[binger] round_count = 6, self.max_round = 10
+[binger] Pot: 30, Bet amount: 21, Min raise: 10, Max raise: 53
+[binger] Raise 21
+[self.search_stack] => found name : binger = binger
+[binger] Win rate: 0.741, Hole card: ['SK', 'CQ'], Community card: ['HJ', 'HQ', 'CT', 'H4']
+[binger] round_count = 6, self.max_round = 10
+[binger] Pot: 72, Bet amount: 56, Min raise: 10, Max raise: 32
+[binger] All in 56 >= 32
+[self.search_stack] => found name : binger = binger
+[binger] Win rate: 0.197, Hole card: ['S5', 'C2'], Community card: []
+[binger] round_count = 7, self.max_round = 10
+[binger] Fold
+[self.search_stack] => found name : gto3 = gto3
+[binger] Win rate: 0.362, Hole card: ['HK', 'C6'], Community card: []
+[binger] round_count = 8, self.max_round = 10
+[binger] Pot: 30, Bet amount: 7, Min raise: 15, Max raise: 104
+[binger] Call 7 < 15
+[binger] Win rate: 0.205, Hole card: ['HK', 'C6'], Community card: ['HT', 'S9', 'D4']
+[binger] round_count = 8, self.max_round = 10
+[binger] Fold
+[self.search_stack] => found name : gto3 = gto3
+[binger] Win rate: 0.487, Hole card: ['SK', 'HA'], Community card: []
+[binger] round_count = 9, self.max_round = 10
+[binger] last round !!! (round_count = 9, self.max_round = 10)
+[binger] ours = 89, top = 599
+[binger] All in
+[self.search_stack] => found name : binger = binger
+[self.search_stack] => found name : gto3 = gto3
+[binger] Win rate: 0.679, Hole card: ['SK', 'HA'], Community card: []
+[binger] round_count = 9, self.max_round = 10
+[binger] last round !!! (round_count = 9, self.max_round = 10)
+[binger] ours = 5, top = 324
+[binger] All in
+[self.search_stack] => found name : binger = binger

@@ -1,0 +1,150 @@
+game-10.yaml
+health check succeeded for script of [ submission/pokermon.py ]
+health check succeeded for script of [ submission/nobot.py ]
+health check succeeded for script of [ submission/allin.py ]
+health check succeeded for script of [ submission/adacadabra.py ]
+health check succeeded for script of [ submission/dudu.py ]
+health check succeeded for script of [ submission/gigabrain/gigabrain.py ]
+health check succeeded for script of [ submission/waterbottle.py ]
+2025-05-06 01:27:25.104993: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-05-06 01:27:25.861080: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-05-06 01:27:27.755205: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE3 SSE4.1 SSE4.2 AVX AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+✅ Loaded pretrained weights successfully.
+health check succeeded for script of [ submission/PokerAi/mybot.py ]
+✅ Loaded pretrained weights successfully.
+health check succeeded for script of [ submission/gtoWes.py ]
+[Error] uuid not set before receive_game_start_message.
+[Round 1] Hole cards: ['DQ', 'H2']
+[Decide R1] Street: preflop, Hole: ['DQ', 'H2'], Community: []
+=> Preflop: folding hand
+
+--- New decision point ---
+Hole cards: ['H3', 'DK']
+Community cards: []
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 10}, {'action': 'raise', 'amount': {'min': 15, 'max': 100}}]
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 84ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 97ms/step
+  0%|          | 0/1000 [00:00<?, ?it/s] 29%|##8       | 289/1000 [00:00<00:00, 2866.32it/s] 58%|#####7    | 576/1000 [00:00<00:00, 2822.75it/s] 86%|########5 | 859/1000 [00:00<00:00, 1818.96it/s]100%|##########| 1000/1000 [00:00<00:00, 2111.64it/s]
+[self.search_stack] => found name : allin = allin
+
+--- New decision point ---
+Hole cards: ['H3', 'DK']
+Community cards: []
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 90}, {'action': 'raise', 'amount': {'min': -1, 'max': -1}}]
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 17ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 30ms/step
+[self.search_stack] => found name : allin = allin
+
+--- New decision point ---
+Hole cards: ['H3', 'DK']
+Community cards: ['CA', 'ST', 'SA']
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 10}, {'action': 'raise', 'amount': {'min': -1, 'max': -1}}]
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 15ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 27ms/step
+[Round 2] Hole cards: ['H4', 'HK']
+
+--- New decision point ---
+Hole cards: ['C9', 'CQ']
+Community cards: []
+Valid actions: [{'action': 'fold', 'amount': 0}, {'action': 'call', 'amount': 10}, {'action': 'raise', 'amount': {'min': -1, 'max': -1}}]
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 17ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 30ms/step
+  0%|          | 0/1000 [00:00<?, ?it/s] 24%|##4       | 242/1000 [00:00<00:00, 2409.03it/s] 48%|####8     | 483/1000 [00:00<00:00, 2399.54it/s] 72%|#######2  | 723/1000 [00:00<00:00, 1574.65it/s] 98%|#########8| 980/1000 [00:00<00:00, 1868.00it/s]100%|##########| 1000/1000 [00:00<00:00, 1907.84it/s]
+[self.search_stack] => found name : gtowes = gtowes
+[self.search_stack] => found name : allin = allin
+[Decide R2] Street: preflop, Hole: ['H4', 'HK'], Community: []
+=> Preflop: folding hand
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 16ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 28ms/step
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 16ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 29ms/step
+[Round 3] Hole cards: ['C9', 'CQ']
+[self.search_stack] => found name : allin = allin
+[Decide R3] Street: preflop, Hole: ['C9', 'CQ'], Community: []
+=> Preflop: playing hand
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 15ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 27ms/step
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 15ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 27ms/step
+[Round 4] Hole cards: ['DJ', 'H6']
+[self.search_stack] => found name : allin = allin
+[Decide R4] Street: preflop, Hole: ['DJ', 'H6'], Community: []
+=> Preflop: folding hand
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 15ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 28ms/step
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 15ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 28ms/step
+[Round 5] Hole cards: ['H6', 'C4']
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 15ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 28ms/step
+[Decide R5] Street: preflop, Hole: ['H6', 'C4'], Community: []
+=> Preflop: folding hand
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 16ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 29ms/step
+[Round 6] Hole cards: ['HQ', 'H4']
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 17ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 30ms/step
+[Decide R6] Street: preflop, Hole: ['HQ', 'H4'], Community: []
+=> Preflop: folding hand
+[self.search_stack] => found name : WaterBottle = WaterBottle
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 18ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 31ms/step
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 15ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 28ms/step
+[Round 7] Hole cards: ['CT', 'SJ']
+[Decide R7] Street: preflop, Hole: ['CT', 'SJ'], Community: []
+=> Preflop: playing hand
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 14ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 26ms/step
+[Decide R7] Street: preflop, Hole: ['CT', 'SJ'], Community: []
+=> Preflop: playing hand
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 16ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 29ms/step
+[Decide R7] Street: flop, Hole: ['CT', 'SJ'], Community: ['CJ', 'HQ', 'S3']
+=> Flop: folding
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 15ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 29ms/step
+[Round 8] Hole cards: ['H2', 'H3']
+[Decide R8] Street: preflop, Hole: ['H2', 'H3'], Community: []
+=> Preflop: folding hand
+[self.search_stack] => found name : WaterBottle = WaterBottle
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 17ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 30ms/step
+[self.search_stack] => found name : WaterBottle = WaterBottle
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 17ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 30ms/step
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 17ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 30ms/step
+[Round 9] Hole cards: ['HJ', 'DJ']
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 15ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 28ms/step
+[Decide R9] Street: preflop, Hole: ['HJ', 'DJ'], Community: []
+=> Preflop: playing hand
+[Decide R9] Street: flop, Hole: ['HJ', 'DJ'], Community: ['C5', 'CA', 'H6']
+=> Flop: folding
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 15ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 27ms/step
