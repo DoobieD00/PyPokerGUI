@@ -352,7 +352,7 @@ MAKE YOUR OWN PREDICTION based on the history above.
                 self.api_endpoint,
                 json={"game_state": game_state},
                 headers={"Content-Type": "application/json"},
-                timeout=10  # 600 seconds (10 minutes) timeout originally, now 10s 
+                timeout=300  # 600 seconds (10 minutes) changed to 300 seconds (5 mins)
             )
             
             if response.status_code == 200:
